@@ -1,5 +1,6 @@
 package com.teamsolution.demo.customerservice.entity;
 
+import com.teamsolution.demo.common.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,12 +10,9 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "addresses")
+@EqualsAndHashCode(callSuper = true)
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class Address {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Address extends BaseEntity  {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)
@@ -43,12 +41,4 @@ public class Address {
 
     @Column(name = "is_default", nullable = false)
     private boolean isDefault = false;
-
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 }
