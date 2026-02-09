@@ -6,7 +6,7 @@ spring:
     name: customer-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/test
+    url: jdbc:postgresql://localhost:5432/customer_service_db
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
@@ -26,6 +26,8 @@ spring:
     locations: classpath:db/migration
 
 logging:
+  file:
+    name: logs/customer-service.log
   level:
     root: INFO
     org.springframework.web: INFO

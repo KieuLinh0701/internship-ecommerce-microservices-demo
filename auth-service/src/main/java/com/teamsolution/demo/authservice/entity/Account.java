@@ -1,12 +1,13 @@
 package com.teamsolution.demo.authservice.entity;
 
-import com.teamsolution.demo.authservice.enums.Role;
+import com.teamsolution.demo.authservice.enums.AccountStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "accounts")
@@ -24,14 +25,20 @@ public class Account {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    private Role role;
+    @Column(name = "status", nullable = false, length = 20)
+    private AccountStatus status = AccountStatus.INACTIVE;
 
+    @Column(name = "is_verified", nullable = false)
     private boolean isVerified = false;
 
     @CreationTimestamp
-    @Column(updatable = false)
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<AccountRole> accountRoles;
 }

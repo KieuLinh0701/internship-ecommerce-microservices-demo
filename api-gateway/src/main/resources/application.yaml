@@ -9,13 +9,20 @@ spring:
       discovery:
         locator:
           enabled: true
-      routes: 
+      routes:
         - id: auth-service
           uri: lb://auth-service
           predicates:
             - Path=/auth-service/**
           filters:
             - RewritePath=/auth-service/(?<segment>.*), /${segment}
+
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/customer-service/**
+          filters:
+            - RewritePath=/customer-service/(?<segment>.*), /${segment}
 
 eureka:
   client:
