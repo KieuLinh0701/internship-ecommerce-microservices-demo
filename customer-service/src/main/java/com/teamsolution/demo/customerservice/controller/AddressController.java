@@ -6,9 +6,11 @@ import com.teamsolution.demo.customerservice.service.AddressService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/addresses")
-public class AddressController extends BaseController<Address, Long> {
+public class AddressController extends BaseController<Address, UUID> {
     public AddressController(AddressService service) {
         super(service);
     }
