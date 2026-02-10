@@ -7,8 +7,10 @@ import com.teamsolution.demo.customerservice.repository.AddressRepository;
 import com.teamsolution.demo.customerservice.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
-public class AddressService extends BaseServiceImpl<Address, Long> {
+public class AddressService extends BaseServiceImpl<Address, UUID> {
     public AddressService(AddressRepository repository) {
         super(repository);
     }
