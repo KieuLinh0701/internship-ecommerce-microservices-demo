@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public abstract class BaseController<T, ID> {
+public abstract class BaseController<D, ID> {
 
-  protected final BaseService<T, ID> service;
+  protected final BaseService<D, ID> service;
 
-  protected BaseController(BaseService<T, ID> service) {
+  protected BaseController(BaseService<D, ID> service) {
     this.service = service;
   }
 
   @PostMapping(produces = "application/json")
-  public ResponseEntity<ApiResponse<T>> create(@RequestBody T entity) {
-    return ResponseEntity.ok(ApiResponse.success(service.create(entity)));
+  public ResponseEntity<ApiResponse<D>> create(@RequestBody D dto) {
+    return ResponseEntity.ok(ApiResponse.success(service.create(dto)));
   }
 
   @PutMapping(value = "/{id}", produces = "application/json")
-  public ResponseEntity<ApiResponse<T>> update(@PathVariable ID id, @RequestBody T entity) {
-    return ResponseEntity.ok(ApiResponse.success(service.update(id, entity)));
+  public ResponseEntity<ApiResponse<D>> update(@PathVariable ID id, @RequestBody D dto) {
+    return ResponseEntity.ok(ApiResponse.success(service.update(id, dto)));
   }
 
   @DeleteMapping(value = "/{id}", produces = "application/json")
@@ -35,12 +35,12 @@ public abstract class BaseController<T, ID> {
   }
 
   @GetMapping(value = "/{id}", produces = "application/json")
-  public ResponseEntity<ApiResponse<T>> getById(@PathVariable ID id) {
+  public ResponseEntity<ApiResponse<D>> getById(@PathVariable ID id) {
     return ResponseEntity.ok(ApiResponse.success(service.getById(id)));
   }
 
   @GetMapping(produces = "application/json")
-  public ResponseEntity<ApiResponse<List<T>>> getAll() {
+  public ResponseEntity<ApiResponse<List<D>>> getAll() {
     return ResponseEntity.ok(ApiResponse.success(service.getAll()));
   }
 }

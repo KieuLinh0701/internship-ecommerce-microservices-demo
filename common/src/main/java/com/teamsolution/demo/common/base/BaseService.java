@@ -2,14 +2,14 @@ package com.teamsolution.demo.common.base;
 
 import java.util.List;
 
-public interface BaseService<T, ID> {
-  T create(T entity);
+public interface BaseService<D, ID> {
+  D create(D dto);
 
-  T update(ID id, T entity);
+  D update(ID id, D dto);
 
   void delete(ID id);
 
-  T getById(ID id);
+  D getById(ID id);
 
-  List<T> getAll();
+  List<D> getAll();
 }
