@@ -20,7 +20,7 @@ public class BaseEntity {
   @Id
   @Column(columnDefinition = "uuid")
   @EqualsAndHashCode.Include
-  private UUID d;
+  private UUID id;
 
   @CreationTimestamp
   @Column(name = "created_at", updatable = false)
