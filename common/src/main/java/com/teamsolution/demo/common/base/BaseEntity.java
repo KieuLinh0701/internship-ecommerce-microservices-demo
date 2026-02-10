@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @MappedSuperclass
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -15,9 +16,9 @@ import java.time.LocalDateTime;
 public class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "uuid")
     @EqualsAndHashCode.Include
-    private Long id;
+    private UUID id;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
