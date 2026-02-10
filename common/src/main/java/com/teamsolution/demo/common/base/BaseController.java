@@ -31,7 +31,7 @@ public abstract class BaseController<T, ID> {
         return ResponseEntity.ok(ApiResponse.success(null));
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<ApiResponse<T>> getById(@PathVariable ID id) {
         return ResponseEntity.ok(ApiResponse.success(service.getById(id)));
     }

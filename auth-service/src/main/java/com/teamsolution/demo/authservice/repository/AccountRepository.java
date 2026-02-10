@@ -2,9 +2,11 @@ package com.teamsolution.demo.authservice.repository;
 
 import com.teamsolution.demo.authservice.entity.Account;
 import com.teamsolution.demo.common.base.BaseRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
+import java.util.UUID;
 
-public interface AccountRepository extends BaseRepository<Account, Long> {
+public interface AccountRepository extends BaseRepository<Account, UUID> {
+    Optional<Account> findByEmail(String email);
+    boolean existsByEmail(String email);
 }

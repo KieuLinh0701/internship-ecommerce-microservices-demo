@@ -7,10 +7,11 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Embeddable
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class AccountRoleId implements Serializable {
-    private Long accountId;
-    private Long roleId;
+    private UUID accountId;
+    private UUID roleId;
 }
