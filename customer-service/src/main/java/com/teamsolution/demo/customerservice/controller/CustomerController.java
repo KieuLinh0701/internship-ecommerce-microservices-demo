@@ -1,16 +1,27 @@
 package com.teamsolution.demo.customerservice.controller;
 
-import com.teamsolution.demo.common.base.BaseController;
-import com.teamsolution.demo.customerservice.entity.Customer;
-import com.teamsolution.demo.customerservice.service.CustomerService;
-import java.util.UUID;
+import java.util.HashMap;
+import java.util.Map;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/customers")
-public class CustomerController extends BaseController<Customer, UUID> {
-  public CustomerController(CustomerService service) {
-    super(service);
+@RequestMapping("/customers")
+public class CustomerController {
+
+  // test
+  @GetMapping("/info")
+  public Map<String, Object> getCustomerInfo() {
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+    Map<String, Object> response = new HashMap<>();
+    response.put("message", "This is protected customer info!");
+    response.put("user", auth.getName());
+    response.put("authorities", auth.getAuthorities());
+
+    return response;
   }
 }
