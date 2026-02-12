@@ -1,4 +1,4 @@
-package com.teamsolution.demo.common.base;
+package com.teamsolution.demo.common.base.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
