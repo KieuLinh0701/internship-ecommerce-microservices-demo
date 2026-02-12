@@ -1,4 +1,4 @@
-package com.teamsolution.demo.common.base.mapper;
+package com.teamsolution.demo.common.mapper;
 
 import java.util.List;
 import org.mapstruct.Mapper;

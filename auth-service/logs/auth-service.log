@@ -9967,3 +9967,1078 @@ Caused by: java.lang.IllegalArgumentException: clientId cannot be empty
 2026-02-12T14:07:10.553+07:00  INFO 20636 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2026-02-12T14:07:10.588+07:00  INFO 20636 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - deregister  status: 200
 2026-02-12T14:07:10.590+07:00  INFO 20636 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-02-12T15:11:24.365+07:00  INFO 2668 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 2668 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:11:24.368+07:00  INFO 2668 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:11:24.448+07:00  INFO 2668 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-12T15:11:24.448+07:00  INFO 2668 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-12T15:11:25.759+07:00  INFO 2668 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:11:25.988+07:00  INFO 2668 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 222 ms. Found 1 JPA repository interface.
+2026-02-12T15:11:26.359+07:00  INFO 2668 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:11:26.538+07:00  WARN 2668 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:11:26.540+07:00  WARN 2668 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:11:27.066+07:00  INFO 2668 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:11:27.121+07:00  INFO 2668 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:11:27.124+07:00  INFO 2668 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:11:27.229+07:00  INFO 2668 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:11:27.229+07:00  INFO 2668 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2780 ms
+2026-02-12T15:11:27.518+07:00  INFO 2668 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-12T15:11:27.706+07:00  INFO 2668 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c9e9249
+2026-02-12T15:11:27.709+07:00  INFO 2668 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-12T15:11:27.752+07:00  INFO 2668 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:11:27.761+07:00  WARN 2668 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:11:27.825+07:00  INFO 2668 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.048s)
+2026-02-12T15:11:27.892+07:00  INFO 2668 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2026-02-12T15:11:27.910+07:00  INFO 2668 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - add tracking fields"
+2026-02-12T15:11:27.954+07:00 ERROR 2668 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema "public" to version "5 - add tracking fields" failed! Changes successfully rolled back.
+2026-02-12T15:11:27.962+07:00  WARN 2668 --- [auth-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "accounts" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 1
+Statement  : ALTER TABLE accounts
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+2026-02-12T15:11:27.963+07:00  INFO 2668 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-12T15:11:28.049+07:00  INFO 2668 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-12T15:11:28.053+07:00  INFO 2668 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-12T15:11:28.080+07:00  INFO 2668 --- [auth-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-12T15:11:28.112+07:00 ERROR 2668 --- [auth-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "accounts" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 1
+Statement  : ALTER TABLE accounts
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.14.jar:6.1.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.14.jar:6.1.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.5.jar:3.3.5]
+	at com.teamsolution.demo.authservice.AuthServiceApplication.main(AuthServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.5.jar:3.3.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "accounts" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 1
+Statement  : ALTER TABLE accounts
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.14.jar:6.1.14]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "accounts" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 1
+Statement  : ALTER TABLE accounts
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:271) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:244) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:139) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:73) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.lambda$execute$0(PostgreSQLAdvisoryLockTemplate.java:56) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:56) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:96) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:145) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:139) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:97) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:202) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:205) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:147) ~[flyway-core-10.10.0.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.3.5.jar:3.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.14.jar:6.1.14]
+	... 20 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "accounts" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 1
+Statement  : ALTER TABLE accounts
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:252) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:214) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:133) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:65) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:57) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:27) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374) ~[flyway-core-10.10.0.jar:na]
+	... 39 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: column "created_by" of relation "accounts" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:356) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:341) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:317) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:312) ~[postgresql-42.7.4.jar:42.7.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:210) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:89) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:206) ~[flyway-core-10.10.0.jar:na]
+	... 45 common frames omitted
+
+2026-02-12T15:13:44.171+07:00  INFO 19388 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 19388 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:13:44.174+07:00  INFO 19388 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:13:44.219+07:00  INFO 19388 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-12T15:13:44.220+07:00  INFO 19388 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-12T15:13:45.167+07:00  INFO 19388 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:13:45.283+07:00  INFO 19388 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interface.
+2026-02-12T15:13:45.618+07:00  INFO 19388 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:13:45.770+07:00  WARN 19388 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:13:45.772+07:00  WARN 19388 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:13:46.212+07:00  INFO 19388 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:13:46.228+07:00  INFO 19388 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:13:46.230+07:00  INFO 19388 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:13:46.310+07:00  INFO 19388 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:13:46.311+07:00  INFO 19388 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2091 ms
+2026-02-12T15:13:46.629+07:00  INFO 19388 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-12T15:13:46.873+07:00  INFO 19388 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6334c41b
+2026-02-12T15:13:46.875+07:00  INFO 19388 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-12T15:13:46.914+07:00  INFO 19388 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:13:46.924+07:00  WARN 19388 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:13:46.995+07:00  INFO 19388 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.054s)
+2026-02-12T15:13:47.060+07:00  INFO 19388 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2026-02-12T15:13:47.072+07:00  INFO 19388 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - add tracking fields"
+2026-02-12T15:13:47.101+07:00 ERROR 19388 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema "public" to version "5 - add tracking fields" failed! Changes successfully rolled back.
+2026-02-12T15:13:47.106+07:00  WARN 19388 --- [auth-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "roles" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 7
+Statement  : ALTER TABLE roles
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+2026-02-12T15:13:47.106+07:00  INFO 19388 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-12T15:13:47.172+07:00  INFO 19388 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-12T15:13:47.175+07:00  INFO 19388 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-12T15:13:47.198+07:00  INFO 19388 --- [auth-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-12T15:13:47.224+07:00 ERROR 19388 --- [auth-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "roles" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 7
+Statement  : ALTER TABLE roles
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.14.jar:6.1.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.14.jar:6.1.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.5.jar:3.3.5]
+	at com.teamsolution.demo.authservice.AuthServiceApplication.main(AuthServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.5.jar:3.3.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "roles" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 7
+Statement  : ALTER TABLE roles
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.14.jar:6.1.14]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "roles" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 7
+Statement  : ALTER TABLE roles
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:271) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:244) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:139) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:73) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.lambda$execute$0(PostgreSQLAdvisoryLockTemplate.java:56) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:56) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:96) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:145) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:139) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:97) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:202) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:205) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:147) ~[flyway-core-10.10.0.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.3.5.jar:3.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.14.jar:6.1.14]
+	... 20 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 23502
+Error Code : 0
+Message    : ERROR: column "created_by" of relation "roles" contains null values
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 7
+Statement  : ALTER TABLE roles
+    ADD COLUMN created_by UUID NOT NULL,
+    ADD COLUMN updated_by UUID,
+    ADD COLUMN is_delete BOOLEAN DEFAULT FALSE,
+    ADD COLUMN version BIGINT DEFAULT 0
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:252) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:214) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:133) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:65) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:57) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:27) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374) ~[flyway-core-10.10.0.jar:na]
+	... 39 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: column "created_by" of relation "roles" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:356) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:341) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:317) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:312) ~[postgresql-42.7.4.jar:42.7.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:210) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:89) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:206) ~[flyway-core-10.10.0.jar:na]
+	... 45 common frames omitted
+
+2026-02-12T15:25:49.875+07:00  INFO 11664 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 11664 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:25:49.878+07:00  INFO 11664 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:25:49.925+07:00  INFO 11664 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-12T15:25:49.925+07:00  INFO 11664 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-12T15:25:50.935+07:00  INFO 11664 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:25:51.118+07:00  INFO 11664 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 177 ms. Found 1 JPA repository interface.
+2026-02-12T15:25:51.447+07:00  INFO 11664 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:25:51.601+07:00  WARN 11664 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:25:51.604+07:00  WARN 11664 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:25:52.015+07:00  INFO 11664 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:25:52.029+07:00  INFO 11664 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:25:52.030+07:00  INFO 11664 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:25:52.098+07:00  INFO 11664 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:25:52.099+07:00  INFO 11664 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2172 ms
+2026-02-12T15:25:52.374+07:00  INFO 11664 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-12T15:25:52.540+07:00  INFO 11664 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@23d97317
+2026-02-12T15:25:52.542+07:00  INFO 11664 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-12T15:25:52.568+07:00  INFO 11664 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:25:52.578+07:00  WARN 11664 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:25:52.642+07:00  INFO 11664 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.047s)
+2026-02-12T15:25:52.698+07:00  INFO 11664 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2026-02-12T15:25:52.712+07:00  INFO 11664 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - add tracking fields"
+2026-02-12T15:25:52.800+07:00 ERROR 11664 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema "public" to version "5 - add tracking fields" failed! Changes successfully rolled back.
+2026-02-12T15:25:52.807+07:00  WARN 11664 --- [auth-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 42703
+Error Code : 0
+Message    : ERROR: column "account_id" does not exist
+  Position: 39
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 19
+Statement  : UPDATE accounts
+    SET created_by = account_id
+
+2026-02-12T15:25:52.807+07:00  INFO 11664 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-12T15:25:53.011+07:00  INFO 11664 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-12T15:25:53.015+07:00  INFO 11664 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-12T15:25:53.039+07:00  INFO 11664 --- [auth-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-12T15:25:53.073+07:00 ERROR 11664 --- [auth-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 42703
+Error Code : 0
+Message    : ERROR: column "account_id" does not exist
+  Position: 39
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 19
+Statement  : UPDATE accounts
+    SET created_by = account_id
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.14.jar:6.1.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.14.jar:6.1.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.5.jar:3.3.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.5.jar:3.3.5]
+	at com.teamsolution.demo.authservice.AuthServiceApplication.main(AuthServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.5.jar:3.3.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 42703
+Error Code : 0
+Message    : ERROR: column "account_id" does not exist
+  Position: 39
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 19
+Statement  : UPDATE accounts
+    SET created_by = account_id
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.14.jar:6.1.14]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 42703
+Error Code : 0
+Message    : ERROR: column "account_id" does not exist
+  Position: 39
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 19
+Statement  : UPDATE accounts
+    SET created_by = account_id
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:271) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:244) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:139) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:73) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.lambda$execute$0(PostgreSQLAdvisoryLockTemplate.java:56) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:56) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:96) ~[flyway-database-postgresql-10.10.0.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:145) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:139) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:97) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:202) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:205) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:147) ~[flyway-core-10.10.0.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.3.5.jar:3.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.14.jar:6.1.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.14.jar:6.1.14]
+	... 20 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__add_tracking_fields.sql failed
+--------------------------------------------
+SQL State  : 42703
+Error Code : 0
+Message    : ERROR: column "account_id" does not exist
+  Position: 39
+Location   : db/migration/V5__add_tracking_fields.sql (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes\db\migration\V5__add_tracking_fields.sql)
+Line       : 19
+Statement  : UPDATE accounts
+    SET created_by = account_id
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:252) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:214) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:133) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:65) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:57) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:27) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374) ~[flyway-core-10.10.0.jar:na]
+	... 39 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: column "account_id" does not exist
+  Position: 39
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:356) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:341) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:317) ~[postgresql-42.7.4.jar:42.7.4]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:312) ~[postgresql-42.7.4.jar:42.7.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:210) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:89) ~[flyway-core-10.10.0.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:206) ~[flyway-core-10.10.0.jar:na]
+	... 45 common frames omitted
+
+2026-02-12T15:26:32.757+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 24284 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:26:32.760+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:26:32.822+07:00  INFO 24284 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-12T15:26:32.822+07:00  INFO 24284 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-12T15:26:33.797+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:26:33.941+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 1 JPA repository interface.
+2026-02-12T15:26:34.487+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:26:34.679+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:26:34.683+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:26:35.173+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:26:35.186+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:26:35.187+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:26:35.255+07:00  INFO 24284 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:26:35.256+07:00  INFO 24284 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2433 ms
+2026-02-12T15:26:35.753+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-12T15:26:36.055+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2441c2d7
+2026-02-12T15:26:36.058+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-12T15:26:36.097+07:00  INFO 24284 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:26:36.106+07:00  WARN 24284 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:26:36.156+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.036s)
+2026-02-12T15:26:36.227+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2026-02-12T15:26:36.243+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - add tracking fields"
+2026-02-12T15:26:36.306+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v5 (execution time 00:00.037s)
+2026-02-12T15:26:36.428+07:00  INFO 24284 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-12T15:26:36.535+07:00  INFO 24284 --- [auth-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-02-12T15:26:36.598+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-12T15:26:37.161+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-12T15:26:37.251+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12T15:26:37.812+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:26:37.812+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:26:38.575+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12T15:26:38.579+07:00  INFO 24284 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:26:39.017+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-12T15:26:39.654+07:00  WARN 24284 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-12T15:26:39.784+07:00  INFO 24284 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name customAuthenticationProvider
+2026-02-12T15:26:39.784+07:00  WARN 24284 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-12T15:26:40.967+07:00  WARN 24284 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-02-12T15:26:41.069+07:00  INFO 24284 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-12T15:26:41.113+07:00  WARN 24284 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-12T15:26:41.264+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-12T15:26:41.296+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-12T15:26:41.301+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:26:41.311+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-12T15:26:41.312+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-12T15:26:41.312+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-12T15:26:41.312+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-12T15:26:41.312+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-12T15:26:41.312+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-12T15:26:41.312+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-12T15:26:41.683+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-12T15:26:41.685+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-12T15:26:41.686+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-12T15:26:41.688+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1770884801688 with initial instances count: 2
+2026-02-12T15:26:41.693+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2026-02-12T15:26:41.693+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770884801693, current=UP, previous=STARTING]
+2026-02-12T15:26:41.695+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:26:41.719+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9001 (http) with context path '/'
+2026-02-12T15:26:41.720+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9001
+2026-02-12T15:26:41.739+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Started AuthServiceApplication in 9.508 seconds (process running for 10.58)
+2026-02-12T15:26:41.740+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:31:41.322+07:00  INFO 24284 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:32:01.202+07:00  INFO 24284 --- [auth-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2026-02-12T15:32:01.249+07:00  INFO 24284 --- [auth-service] [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2026-02-12T15:32:01.250+07:00  INFO 24284 --- [auth-service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885121250, current=DOWN, previous=UP]
+2026-02-12T15:32:01.251+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:32:01.287+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:32:01.374+07:00  INFO 24284 --- [auth-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:32:01.436+07:00  INFO 24284 --- [auth-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-12T15:32:01.462+07:00  INFO 24284 --- [auth-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-12T15:32:01.485+07:00  INFO 24284 --- [auth-service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-02-12T15:32:04.501+07:00  INFO 24284 --- [auth-service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-02-12T15:32:04.648+07:00  INFO 24284 --- [auth-service] [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - deregister  status: 200
+2026-02-12T15:32:04.650+07:00  INFO 24284 --- [auth-service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-02-12T15:32:05.277+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 24284 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:32:05.278+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:32:05.919+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:32:05.937+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2026-02-12T15:32:06.113+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:32:06.152+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:32:06.154+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:32:06.271+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:32:06.275+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:32:06.276+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:32:06.324+07:00  INFO 24284 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:32:06.324+07:00  INFO 24284 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1041 ms
+2026-02-12T15:32:06.423+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-02-12T15:32:06.517+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@6a60f9f
+2026-02-12T15:32:06.518+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-02-12T15:32:06.525+07:00  INFO 24284 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:32:06.533+07:00  WARN 24284 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:32:06.597+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.043s)
+2026-02-12T15:32:06.698+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2026-02-12T15:32:06.700+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-02-12T15:32:06.771+07:00  INFO 24284 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-12T15:32:06.776+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-12T15:32:06.802+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-12T15:32:06.820+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12T15:32:06.899+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:32:06.899+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:32:07.033+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12T15:32:07.035+07:00  INFO 24284 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:32:07.828+07:00  WARN 24284 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-12T15:32:07.871+07:00  INFO 24284 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name customAuthenticationProvider
+2026-02-12T15:32:07.871+07:00  WARN 24284 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-12T15:32:08.439+07:00  WARN 24284 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-02-12T15:32:08.512+07:00  INFO 24284 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-12T15:32:08.534+07:00  WARN 24284 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-12T15:32:08.563+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-12T15:32:08.567+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-12T15:32:08.568+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:32:08.568+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-12T15:32:08.568+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-12T15:32:08.568+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-12T15:32:08.569+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-12T15:32:08.569+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-12T15:32:08.569+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-12T15:32:08.569+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-12T15:32:08.618+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-12T15:32:08.618+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-12T15:32:08.620+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-12T15:32:08.621+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1770885128621 with initial instances count: 3
+2026-02-12T15:32:08.624+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2026-02-12T15:32:08.624+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885128624, current=UP, previous=STARTING]
+2026-02-12T15:32:08.624+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:32:08.634+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9001 (http) with context path '/'
+2026-02-12T15:32:08.670+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9001
+2026-02-12T15:32:08.730+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:32:08.743+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Started AuthServiceApplication in 3.592 seconds (process running for 337.585)
+2026-02-12T15:32:08.751+07:00  INFO 24284 --- [auth-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-12T15:32:09.890+07:00  INFO 24284 --- [auth-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2026-02-12T15:32:09.892+07:00  INFO 24284 --- [auth-service] [Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2026-02-12T15:32:09.892+07:00  INFO 24284 --- [auth-service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885129892, current=DOWN, previous=UP]
+2026-02-12T15:32:09.892+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:32:09.900+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:32:09.908+07:00  INFO 24284 --- [auth-service] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:32:09.910+07:00  INFO 24284 --- [auth-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-02-12T15:32:09.913+07:00  INFO 24284 --- [auth-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-02-12T15:32:09.915+07:00  INFO 24284 --- [auth-service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-02-12T15:32:12.930+07:00  INFO 24284 --- [auth-service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-02-12T15:32:12.960+07:00  INFO 24284 --- [auth-service] [Thread-7] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - deregister  status: 200
+2026-02-12T15:32:12.961+07:00  INFO 24284 --- [auth-service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-02-12T15:32:13.375+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 24284 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:32:13.376+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:32:14.378+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:32:14.405+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interface.
+2026-02-12T15:32:14.693+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:32:14.742+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:32:14.744+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:32:14.947+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:32:14.949+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:32:14.950+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:32:15.050+07:00  INFO 24284 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:32:15.051+07:00  INFO 24284 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1663 ms
+2026-02-12T15:32:15.172+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-02-12T15:32:15.270+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@689b9305
+2026-02-12T15:32:15.271+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-02-12T15:32:15.273+07:00  INFO 24284 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:32:15.277+07:00  WARN 24284 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:32:15.303+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.017s)
+2026-02-12T15:32:15.580+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2026-02-12T15:32:15.581+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-02-12T15:32:15.743+07:00  INFO 24284 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-12T15:32:15.752+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-12T15:32:15.777+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-12T15:32:15.795+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12T15:32:15.920+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:32:15.920+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:32:16.057+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12T15:32:16.058+07:00  INFO 24284 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:32:16.355+07:00  WARN 24284 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-12T15:32:16.411+07:00  INFO 24284 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name customAuthenticationProvider
+2026-02-12T15:32:16.411+07:00  WARN 24284 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-12T15:32:17.140+07:00  WARN 24284 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-02-12T15:32:17.247+07:00  INFO 24284 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-12T15:32:17.286+07:00  WARN 24284 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-12T15:32:17.349+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-12T15:32:17.353+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-12T15:32:17.353+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:32:17.354+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-12T15:32:17.354+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-12T15:32:17.354+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-12T15:32:17.354+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-12T15:32:17.354+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-12T15:32:17.354+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-12T15:32:17.354+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-12T15:32:17.411+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-12T15:32:17.411+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-12T15:32:17.412+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-12T15:32:17.412+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1770885137412 with initial instances count: 3
+2026-02-12T15:32:17.416+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2026-02-12T15:32:17.416+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885137416, current=UP, previous=STARTING]
+2026-02-12T15:32:17.417+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:32:17.425+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9001 (http) with context path '/'
+2026-02-12T15:32:17.426+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9001
+2026-02-12T15:32:17.440+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:32:17.445+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Started AuthServiceApplication in 4.233 seconds (process running for 346.286)
+2026-02-12T15:32:17.450+07:00  INFO 24284 --- [auth-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-12T15:37:17.383+07:00  INFO 24284 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:38:38.613+07:00  INFO 24284 --- [auth-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2026-02-12T15:38:38.632+07:00  INFO 24284 --- [auth-service] [Thread-13] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2026-02-12T15:38:38.633+07:00  INFO 24284 --- [auth-service] [Thread-13] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885518632, current=DOWN, previous=UP]
+2026-02-12T15:38:38.633+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:38:38.677+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:38:38.732+07:00  INFO 24284 --- [auth-service] [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:38:38.761+07:00  INFO 24284 --- [auth-service] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-02-12T15:38:38.787+07:00  INFO 24284 --- [auth-service] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-02-12T15:38:38.790+07:00  INFO 24284 --- [auth-service] [Thread-13] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-02-12T15:38:41.806+07:00  INFO 24284 --- [auth-service] [Thread-13] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-02-12T15:38:41.823+07:00  INFO 24284 --- [auth-service] [Thread-13] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - deregister  status: 200
+2026-02-12T15:38:41.824+07:00  INFO 24284 --- [auth-service] [Thread-13] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-02-12T15:38:42.291+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 24284 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:38:42.291+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:38:42.857+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:38:42.883+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
+2026-02-12T15:38:43.098+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:38:43.137+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:38:43.138+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:38:43.323+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:38:43.325+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:38:43.326+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:38:43.368+07:00  INFO 24284 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:38:43.368+07:00  INFO 24284 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1071 ms
+2026-02-12T15:38:43.442+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-02-12T15:38:43.517+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@367d48ef
+2026-02-12T15:38:43.517+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-02-12T15:38:43.528+07:00  INFO 24284 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:38:43.532+07:00  WARN 24284 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:38:43.570+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.022s)
+2026-02-12T15:38:43.643+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2026-02-12T15:38:43.644+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-02-12T15:38:44.099+07:00  INFO 24284 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-12T15:38:44.125+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-12T15:38:44.160+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-12T15:38:44.196+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12T15:38:44.409+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:38:44.409+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:38:44.630+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12T15:38:44.632+07:00  INFO 24284 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:38:45.067+07:00  WARN 24284 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-12T15:38:45.116+07:00  INFO 24284 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name customAuthenticationProvider
+2026-02-12T15:38:45.116+07:00  WARN 24284 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-12T15:38:45.729+07:00  WARN 24284 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-02-12T15:38:45.803+07:00  INFO 24284 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-12T15:38:45.835+07:00  WARN 24284 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-12T15:38:45.884+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-12T15:38:45.890+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-12T15:38:45.890+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:38:45.891+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-12T15:38:45.891+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-12T15:38:45.891+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-12T15:38:45.891+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-12T15:38:45.891+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-12T15:38:45.891+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-12T15:38:45.891+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-12T15:38:45.958+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-12T15:38:45.959+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-12T15:38:45.959+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-12T15:38:45.959+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1770885525959 with initial instances count: 3
+2026-02-12T15:38:45.963+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2026-02-12T15:38:45.963+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885525963, current=UP, previous=STARTING]
+2026-02-12T15:38:45.963+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:38:45.972+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9001 (http) with context path '/'
+2026-02-12T15:38:45.973+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9001
+2026-02-12T15:38:45.984+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:38:45.985+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Started AuthServiceApplication in 3.775 seconds (process running for 734.826)
+2026-02-12T15:38:45.986+07:00  INFO 24284 --- [auth-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-12T15:38:47.179+07:00  INFO 24284 --- [auth-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2026-02-12T15:38:47.181+07:00  INFO 24284 --- [auth-service] [Thread-19] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2026-02-12T15:38:47.181+07:00  INFO 24284 --- [auth-service] [Thread-19] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885527181, current=DOWN, previous=UP]
+2026-02-12T15:38:47.181+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:38:47.186+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:38:47.193+07:00  INFO 24284 --- [auth-service] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:38:47.194+07:00  INFO 24284 --- [auth-service] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-02-12T15:38:47.197+07:00  INFO 24284 --- [auth-service] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-02-12T15:38:47.198+07:00  INFO 24284 --- [auth-service] [Thread-19] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-02-12T15:38:50.208+07:00  INFO 24284 --- [auth-service] [Thread-19] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-02-12T15:38:50.235+07:00  INFO 24284 --- [auth-service] [Thread-19] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - deregister  status: 200
+2026-02-12T15:38:50.236+07:00  INFO 24284 --- [auth-service] [Thread-19] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-02-12T15:38:50.602+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 24284 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:38:50.603+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:38:51.279+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:38:51.296+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2026-02-12T15:38:51.491+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:38:51.526+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:38:51.527+07:00  WARN 24284 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:38:51.652+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:38:51.653+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:38:51.658+07:00  INFO 24284 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:38:51.706+07:00  INFO 24284 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:38:51.706+07:00  INFO 24284 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1097 ms
+2026-02-12T15:38:51.789+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-02-12T15:38:51.858+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@680b2b2c
+2026-02-12T15:38:51.859+07:00  INFO 24284 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-02-12T15:38:51.861+07:00  INFO 24284 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:38:51.864+07:00  WARN 24284 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:38:51.881+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.011s)
+2026-02-12T15:38:51.950+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2026-02-12T15:38:51.951+07:00  INFO 24284 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-02-12T15:38:51.997+07:00  INFO 24284 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-12T15:38:52.002+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-12T15:38:52.017+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-12T15:38:52.027+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12T15:38:52.097+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:38:52.097+07:00  WARN 24284 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:38:52.165+07:00  INFO 24284 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12T15:38:52.166+07:00  INFO 24284 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:38:52.312+07:00  WARN 24284 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-12T15:38:52.358+07:00  INFO 24284 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name customAuthenticationProvider
+2026-02-12T15:38:52.358+07:00  WARN 24284 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-12T15:38:52.748+07:00  WARN 24284 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-02-12T15:38:52.819+07:00  INFO 24284 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-12T15:38:52.833+07:00  WARN 24284 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-12T15:38:52.851+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-12T15:38:52.853+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-12T15:38:52.854+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-12T15:38:52.894+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-12T15:38:52.896+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-12T15:38:52.897+07:00  INFO 24284 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-12T15:38:52.897+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1770885532897 with initial instances count: 3
+2026-02-12T15:38:52.901+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2026-02-12T15:38:52.902+07:00  INFO 24284 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885532902, current=UP, previous=STARTING]
+2026-02-12T15:38:52.902+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:38:52.907+07:00  INFO 24284 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9001 (http) with context path '/'
+2026-02-12T15:38:52.909+07:00  INFO 24284 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9001
+2026-02-12T15:38:52.916+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:38:52.925+07:00  INFO 24284 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Started AuthServiceApplication in 2.509 seconds (process running for 741.767)
+2026-02-12T15:38:52.928+07:00  INFO 24284 --- [auth-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-12T15:43:52.864+07:00  INFO 24284 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:44:45.332+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2026-02-12T15:44:45.332+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770885885332, current=DOWN, previous=UP]
+2026-02-12T15:44:45.333+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:44:45.342+07:00  INFO 24284 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:44:45.347+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:44:45.348+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-02-12T15:44:45.355+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2026-02-12T15:44:45.355+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-02-12T15:44:48.370+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-02-12T15:44:48.386+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - deregister  status: 200
+2026-02-12T15:44:48.386+07:00  INFO 24284 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-02-12T15:50:58.439+07:00  INFO 26740 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Starting AuthServiceApplication using Java 21.0.8 with PID 26740 (C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service\target\classes started by linhk in C:\TeamSolutionTraining\internship-ecommerce-microservices-demo\auth-service)
+2026-02-12T15:50:58.442+07:00  INFO 26740 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-12T15:50:58.529+07:00  INFO 26740 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-12T15:50:58.529+07:00  INFO 26740 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-12T15:50:59.720+07:00  INFO 26740 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-12T15:50:59.870+07:00  INFO 26740 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 1 JPA repository interface.
+2026-02-12T15:51:00.216+07:00  INFO 26740 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8e0b3311-925d-30db-a733-9d9f40701897
+2026-02-12T15:51:00.355+07:00  WARN 26740 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-12T15:51:00.357+07:00  WARN 26740 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-02-12T15:51:00.815+07:00  INFO 26740 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9001 (http)
+2026-02-12T15:51:00.836+07:00  INFO 26740 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-12T15:51:00.837+07:00  INFO 26740 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-02-12T15:51:00.913+07:00  INFO 26740 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-12T15:51:00.914+07:00  INFO 26740 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2384 ms
+2026-02-12T15:51:01.187+07:00  INFO 26740 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-12T15:51:01.332+07:00  INFO 26740 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d775bda
+2026-02-12T15:51:01.335+07:00  INFO 26740 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-12T15:51:01.383+07:00  INFO 26740 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/auth_service_db (PostgreSQL 18.1)
+2026-02-12T15:51:01.392+07:00  WARN 26740 --- [auth-service] [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-02-12T15:51:01.444+07:00  INFO 26740 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.039s)
+2026-02-12T15:51:01.497+07:00  INFO 26740 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2026-02-12T15:51:01.510+07:00  INFO 26740 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - add tracking fields"
+2026-02-12T15:51:01.594+07:00  INFO 26740 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v5 (execution time 00:00.068s)
+2026-02-12T15:51:01.712+07:00  INFO 26740 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-12T15:51:01.770+07:00  INFO 26740 --- [auth-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-02-12T15:51:01.810+07:00  INFO 26740 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-12T15:51:02.199+07:00  INFO 26740 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-12T15:51:02.252+07:00  WARN 26740 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-12T15:51:02.582+07:00  WARN 26740 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:51:02.583+07:00  WARN 26740 --- [auth-service] [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.teamsolution.demo.authservice.entity.AccountRoleId
+2026-02-12T15:51:03.189+07:00  INFO 26740 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-12T15:51:03.200+07:00  INFO 26740 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-12T15:51:03.632+07:00  INFO 26740 --- [auth-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-12T15:51:04.261+07:00  WARN 26740 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-12T15:51:04.323+07:00  INFO 26740 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name customAuthenticationProvider
+2026-02-12T15:51:04.324+07:00  WARN 26740 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-12T15:51:05.523+07:00  WARN 26740 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-02-12T15:51:05.714+07:00  INFO 26740 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-02-12T15:51:05.778+07:00  WARN 26740 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-12T15:51:05.833+07:00  INFO 26740 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-02-12T15:51:05.856+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-02-12T15:51:05.860+07:00  INFO 26740 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:51:05.868+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-02-12T15:51:05.868+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-02-12T15:51:05.868+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-02-12T15:51:05.868+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-02-12T15:51:05.869+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-02-12T15:51:05.869+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-02-12T15:51:05.869+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-02-12T15:51:06.202+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-02-12T15:51:06.205+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-02-12T15:51:06.208+07:00  INFO 26740 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-12T15:51:06.210+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1770886266209 with initial instances count: 2
+2026-02-12T15:51:06.213+07:00  INFO 26740 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2026-02-12T15:51:06.214+07:00  INFO 26740 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1770886266214, current=UP, previous=STARTING]
+2026-02-12T15:51:06.216+07:00  INFO 26740 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001: registering service...
+2026-02-12T15:51:06.241+07:00  INFO 26740 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9001 (http) with context path '/'
+2026-02-12T15:51:06.242+07:00  INFO 26740 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9001
+2026-02-12T15:51:06.252+07:00  INFO 26740 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/LAPTOP-D9J937E4:auth-service:9001 - registration status: 204
+2026-02-12T15:51:06.260+07:00  INFO 26740 --- [auth-service] [restartedMain] c.t.d.a.AuthServiceApplication           : Started AuthServiceApplication in 8.483 seconds (process running for 9.675)
+2026-02-12T15:55:26.366+07:00  INFO 26740 --- [auth-service] [http-nio-9001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-12T15:55:26.372+07:00  INFO 26740 --- [auth-service] [http-nio-9001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-12T15:55:26.435+07:00  INFO 26740 --- [auth-service] [http-nio-9001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 62 ms
+2026-02-12T15:55:37.396+07:00 DEBUG 26740 --- [auth-service] [http-nio-9001-exec-10] org.hibernate.SQL                        : 
+    select
+        distinct a1_0.id,
+        ar1_0.account_id,
+        ar1_0.role_id,
+        ar1_0.created_at,
+        ar1_0.created_by,
+        ar1_0.is_delete,
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.created_by,
+        r1_0.is_delete,
+        r1_0.name,
+        r1_0.status,
+        r1_0.updated_at,
+        r1_0.updated_by,
+        r1_0.version,
+        ar1_0.status,
+        ar1_0.updated_at,
+        ar1_0.updated_by,
+        ar1_0.version,
+        a1_0.created_at,
+        a1_0.created_by,
+        a1_0.email,
+        a1_0.is_delete,
+        a1_0.is_verified,
+        a1_0.password,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.updated_by,
+        a1_0.version 
+    from
+        accounts a1_0 
+    left join
+        account_roles ar1_0 
+            on a1_0.id=ar1_0.account_id 
+    left join
+        roles r1_0 
+            on r1_0.id=ar1_0.role_id 
+    where
+        a1_0.email=? 
+        and a1_0.status=? 
+        and ar1_0.status=? 
+        and r1_0.status=?
+2026-02-12T15:55:48.229+07:00 DEBUG 26740 --- [auth-service] [http-nio-9001-exec-9] org.hibernate.SQL                        : 
+    select
+        distinct a1_0.id,
+        ar1_0.account_id,
+        ar1_0.role_id,
+        ar1_0.created_at,
+        ar1_0.created_by,
+        ar1_0.is_delete,
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.created_by,
+        r1_0.is_delete,
+        r1_0.name,
+        r1_0.status,
+        r1_0.updated_at,
+        r1_0.updated_by,
+        r1_0.version,
+        ar1_0.status,
+        ar1_0.updated_at,
+        ar1_0.updated_by,
+        ar1_0.version,
+        a1_0.created_at,
+        a1_0.created_by,
+        a1_0.email,
+        a1_0.is_delete,
+        a1_0.is_verified,
+        a1_0.password,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.updated_by,
+        a1_0.version 
+    from
+        accounts a1_0 
+    left join
+        account_roles ar1_0 
+            on a1_0.id=ar1_0.account_id 
+    left join
+        roles r1_0 
+            on r1_0.id=ar1_0.role_id 
+    where
+        a1_0.email=? 
+        and a1_0.status=? 
+        and ar1_0.status=? 
+        and r1_0.status=?
+2026-02-12T15:55:59.634+07:00 DEBUG 26740 --- [auth-service] [http-nio-9001-exec-3] org.hibernate.SQL                        : 
+    select
+        distinct a1_0.id,
+        ar1_0.account_id,
+        ar1_0.role_id,
+        ar1_0.created_at,
+        ar1_0.created_by,
+        ar1_0.is_delete,
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.created_by,
+        r1_0.is_delete,
+        r1_0.name,
+        r1_0.status,
+        r1_0.updated_at,
+        r1_0.updated_by,
+        r1_0.version,
+        ar1_0.status,
+        ar1_0.updated_at,
+        ar1_0.updated_by,
+        ar1_0.version,
+        a1_0.created_at,
+        a1_0.created_by,
+        a1_0.email,
+        a1_0.is_delete,
+        a1_0.is_verified,
+        a1_0.password,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.updated_by,
+        a1_0.version 
+    from
+        accounts a1_0 
+    left join
+        account_roles ar1_0 
+            on a1_0.id=ar1_0.account_id 
+    left join
+        roles r1_0 
+            on r1_0.id=ar1_0.role_id 
+    where
+        a1_0.email=? 
+        and a1_0.status=? 
+        and ar1_0.status=? 
+        and r1_0.status=?
+2026-02-12T15:56:05.880+07:00  INFO 26740 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-02-12T15:57:31.415+07:00 DEBUG 26740 --- [auth-service] [http-nio-9001-exec-9] org.hibernate.SQL                        : 
+    select
+        distinct a1_0.id,
+        ar1_0.account_id,
+        ar1_0.role_id,
+        ar1_0.created_at,
+        ar1_0.created_by,
+        ar1_0.is_delete,
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.created_by,
+        r1_0.is_delete,
+        r1_0.name,
+        r1_0.status,
+        r1_0.updated_at,
+        r1_0.updated_by,
+        r1_0.version,
+        ar1_0.status,
+        ar1_0.updated_at,
+        ar1_0.updated_by,
+        ar1_0.version,
+        a1_0.created_at,
+        a1_0.created_by,
+        a1_0.email,
+        a1_0.is_delete,
+        a1_0.is_verified,
+        a1_0.password,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.updated_by,
+        a1_0.version 
+    from
+        accounts a1_0 
+    left join
+        account_roles ar1_0 
+            on a1_0.id=ar1_0.account_id 
+    left join
+        roles r1_0 
+            on r1_0.id=ar1_0.role_id 
+    where
+        a1_0.email=? 
+        and a1_0.status=? 
+        and ar1_0.status=? 
+        and r1_0.status=?

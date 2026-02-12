@@ -1,7 +1,7 @@
-package com.teamsolution.demo.common.base.controller;
+package com.teamsolution.demo.common.controller;
 
-import com.teamsolution.demo.common.base.service.BaseService;
 import com.teamsolution.demo.common.response.ApiResponse;
+import com.teamsolution.demo.common.service.BaseService;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

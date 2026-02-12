@@ -4,7 +4,7 @@ import com.teamsolution.demo.authservice.entity.Account;
 import com.teamsolution.demo.authservice.enums.AccountRoleStatus;
 import com.teamsolution.demo.authservice.enums.AccountStatus;
 import com.teamsolution.demo.authservice.enums.RoleStatus;
-import com.teamsolution.demo.common.base.BaseRepository;
+import com.teamsolution.demo.common.repository.BaseRepository;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.Query;
