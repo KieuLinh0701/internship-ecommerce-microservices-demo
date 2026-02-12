@@ -2,7 +2,6 @@ package com.teamsolution.demo.authservice.security;
 
 import com.teamsolution.demo.authservice.entity.Account;
 import com.teamsolution.demo.authservice.entity.AccountRole;
-import com.teamsolution.demo.authservice.enums.AccountRoleStatus;
 import java.util.Collection;
 import java.util.Set;
 import java.util.UUID;

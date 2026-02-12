@@ -1,7 +1,7 @@
 package com.teamsolution.demo.authservice.config;
 
+import com.teamsolution.demo.authservice.config.properties.RegisteredClientProperties;
 import com.teamsolution.demo.common.util.UuidGenerator;
-import java.time.Duration;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +24,8 @@ import org.springframework.security.oauth2.server.authorization.settings.TokenSe
 @RequiredArgsConstructor
 public class RegisteredClientConfig {
 
+  private final RegisteredClientProperties registeredClientProperties;
+
   // Stores OAuth2 clients in database
   @Bean
   public RegisteredClientRepository registeredClientRepository(
@@ -32,22 +34,22 @@ public class RegisteredClientConfig {
     JdbcRegisteredClientRepository repository = new JdbcRegisteredClientRepository(jdbcTemplate);
 
     // Seed gateway-client if not exists
-    if (repository.findByClientId("gateway-client") == null) {
+    if (repository.findByClientId(registeredClientProperties.getClientId()) == null) {
       RegisteredClient client =
           RegisteredClient.withId(UuidGenerator.generate().toString())
-              .clientId("gateway-client")
-              .clientSecret(passwordEncoder.encode("gateway-secret"))
-              .clientName("API Gateway Client")
+              .clientId(registeredClientProperties.getClientId())
+              .clientSecret(passwordEncoder.encode(registeredClientProperties.getClientSecret()))
+              .clientName(registeredClientProperties.getClientName())
               .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
               .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
               .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-              .redirectUri("http://localhost:9000/login/oauth2/code/gateway-client")
+              .redirectUri(registeredClientProperties.getRedirectUri())
               .scope("read")
               .scope("write")
               .tokenSettings(
                   TokenSettings.builder()
-                      .accessTokenTimeToLive(Duration.ofMinutes(15))
-                      .refreshTokenTimeToLive(Duration.ofDays(7))
+                      .accessTokenTimeToLive(registeredClientProperties.getAccessTokenTtl())
+                      .refreshTokenTimeToLive(registeredClientProperties.getRefreshTokenTtl())
                       .reuseRefreshTokens(false)
                       .build())
               .build();

@@ -19,9 +19,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-    Account account = accountRepository
-                    .findByEmailWithActiveRoles(email, AccountStatus.ACTIVE, AccountRoleStatus.ACTIVE, RoleStatus.ACTIVE)
-                    .orElseThrow(() -> new UsernameNotFoundException("User not found or inactive"));
+    Account account =
+        accountRepository
+            .findByEmailWithActiveRoles(
+                email, AccountStatus.ACTIVE, AccountRoleStatus.ACTIVE, RoleStatus.ACTIVE)
+            .orElseThrow(() -> new UsernameNotFoundException("User not found or inactive"));
 
     return new CustomUserDetails(account);
   }

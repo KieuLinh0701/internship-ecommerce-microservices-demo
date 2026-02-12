@@ -27,7 +27,7 @@ spring:
             - RewritePath=/customer-service/(?<segment>.*), /$\{segment}
   security:
     oauth2:
-      resourceserver:
+      resource-server:
         jwt:
           jwk-set-uri: http://localhost:9001/oauth2/jwks
 
