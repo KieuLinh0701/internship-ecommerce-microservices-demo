@@ -12,6 +12,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+
+import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,6 +21,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedBy;
 
 @Entity
 @Table(name = "account_roles")
@@ -52,4 +55,18 @@ public class AccountRole {
   @UpdateTimestamp
   @Column(name = "updated_at")
   private LocalDateTime updatedAt;
+
+  @CreatedBy
+  @Column(name = "created_by", updatable = false)
+  private String createdBy;
+
+  @Column(name = "updated_by")
+  private String updatedBy;
+
+  @Column(name = "is_delete")
+  private Boolean isDelete = false;
+
+  @Version
+  @Column(name = "version")
+  private Long version;
 }

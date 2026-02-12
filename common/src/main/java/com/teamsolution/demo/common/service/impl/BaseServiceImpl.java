@@ -1,8 +1,8 @@
-package com.teamsolution.demo.common.base.service.impl;
+package com.teamsolution.demo.common.service.impl;
 
-import com.teamsolution.demo.common.base.mapper.BaseMapper;
-import com.teamsolution.demo.common.base.service.BaseService;
 import com.teamsolution.demo.common.exception.ResourceNotFoundException;
+import com.teamsolution.demo.common.mapper.BaseMapper;
+import com.teamsolution.demo.common.service.BaseService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;

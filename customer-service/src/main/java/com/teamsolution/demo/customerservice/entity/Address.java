@@ -1,6 +1,6 @@
 package com.teamsolution.demo.customerservice.entity;
 
-import com.teamsolution.demo.common.base.BaseEntity;
+import com.teamsolution.demo.common.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

@@ -1,4 +1,4 @@
-package com.teamsolution.demo.common.base.service;
+package com.teamsolution.demo.common.service;
 
 import java.util.List;
 

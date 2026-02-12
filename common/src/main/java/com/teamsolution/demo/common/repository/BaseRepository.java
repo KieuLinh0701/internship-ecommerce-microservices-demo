@@ -1,4 +1,4 @@
-package com.teamsolution.demo.common.base.repository;
+package com.teamsolution.demo.common.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;

@@ -1,6 +1,6 @@
 package com.teamsolution.demo.customerservice.entity;
 
-import com.teamsolution.demo.common.base.BaseEntity;
+import com.teamsolution.demo.common.entity.BaseEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +9,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -27,7 +29,7 @@ import lombok.Setter;
 public class Customer extends BaseEntity {
 
   @Column(name = "account_id", nullable = false)
-  private Long accountId;
+  private UUID accountId;
 
   @Column(name = "full_name", nullable = false)
   private String fullName;

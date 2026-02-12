@@ -1,7 +1,7 @@
 package com.teamsolution.demo.authservice.entity;
 
 import com.teamsolution.demo.authservice.enums.RoleStatus;
-import com.teamsolution.demo.common.base.BaseEntity;
+import com.teamsolution.demo.common.entity.BaseEntity;
 import jakarta.persistence.Column;
 import java.util.Set;
 
