@@ -5,16 +5,16 @@ import com.teamsolution.demo.authservice.enums.AccountRoleStatus;
 import com.teamsolution.demo.authservice.enums.AccountStatus;
 import com.teamsolution.demo.authservice.enums.RoleStatus;
 import com.teamsolution.demo.common.base.BaseRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface AccountRepository extends BaseRepository<Account, UUID> {
   Optional<Account> findByEmail(String email);
 
-  @Query("""
+  @Query(
+      """
     SELECT DISTINCT a
     FROM Account a
     LEFT JOIN FETCH a.accountRoles ar
@@ -25,9 +25,8 @@ public interface AccountRepository extends BaseRepository<Account, UUID> {
       AND r.status = :roleStatus
 """)
   Optional<Account> findByEmailWithActiveRoles(
-          @Param("email") String email,
-          @Param("accountStatus") AccountStatus accountStatus,
-          @Param("accountRoleStatus") AccountRoleStatus accountRoleStatus,
-          @Param("roleStatus") RoleStatus roleStatus
-  );
+      @Param("email") String email,
+      @Param("accountStatus") AccountStatus accountStatus,
+      @Param("accountRoleStatus") AccountRoleStatus accountRoleStatus,
+      @Param("roleStatus") RoleStatus roleStatus);
 }

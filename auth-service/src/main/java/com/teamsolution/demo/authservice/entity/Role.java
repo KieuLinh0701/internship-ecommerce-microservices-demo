@@ -2,9 +2,15 @@ package com.teamsolution.demo.authservice.entity;
 
 import com.teamsolution.demo.authservice.enums.RoleStatus;
 import com.teamsolution.demo.common.base.BaseEntity;
-import jakarta.persistence.*;
-
+import jakarta.persistence.Column;
 import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

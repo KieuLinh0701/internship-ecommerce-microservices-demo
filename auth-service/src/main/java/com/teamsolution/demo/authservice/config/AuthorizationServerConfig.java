@@ -1,7 +1,7 @@
 package com.teamsolution.demo.authservice.config;
 
+import com.teamsolution.demo.authservice.config.properties.AuthorizationServerProperties;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -15,8 +15,7 @@ import org.springframework.security.web.authentication.LoginUrlAuthenticationEnt
 @RequiredArgsConstructor
 public class AuthorizationServerConfig {
 
-  @Value("${spring.security.oauth2.authorization-server.issuer-uri}")
-  private String issuerUri;
+  private final AuthorizationServerProperties authServerProperties;
 
   // OAuth2 Authorization Server Security Filter Chain
   @Bean
@@ -36,6 +35,8 @@ public class AuthorizationServerConfig {
   // Authorization Server Settings (Issuer URL)
   @Bean
   public AuthorizationServerSettings authorizationServerSettings() {
-    return AuthorizationServerSettings.builder().issuer(issuerUri).build();
+    return AuthorizationServerSettings.builder()
+        .issuer(authServerProperties.getIssuerUri())
+        .build();
   }
 }

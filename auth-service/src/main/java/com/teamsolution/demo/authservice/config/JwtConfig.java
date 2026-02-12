@@ -5,6 +5,7 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
+import com.teamsolution.demo.authservice.config.properties.JwtProperties;
 import com.teamsolution.demo.authservice.security.CustomUserDetails;
 import java.security.KeyFactory;
 import java.security.interfaces.RSAPrivateKey;
@@ -13,7 +14,6 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
@@ -26,20 +26,23 @@ import org.springframework.security.oauth2.server.authorization.token.OAuth2Toke
 @Configuration
 public class JwtConfig {
 
-  @Value("${jwt.public-key}")
-  private String publicKeyBase64;
+  private final JwtProperties jwtProperties;
 
-  @Value("${jwt.private-key}")
-  private String privateKeyBase64;
+  public JwtConfig(JwtProperties jwtProperties) {
+    this.jwtProperties = jwtProperties;
+  }
 
   // JWK Source - RSA Public/Private Key Pair
   @Bean
   public JWKSource<SecurityContext> jwkSource() throws Exception {
-    RSAPublicKey publicKey = loadPublicKey(publicKeyBase64);
-    RSAPrivateKey privateKey = loadPrivateKey(privateKeyBase64);
+    RSAPublicKey publicKey = loadPublicKey(jwtProperties.getPublicKey());
+    RSAPrivateKey privateKey = loadPrivateKey(jwtProperties.getPrivateKey());
 
     RSAKey rsaKey =
-        new RSAKey.Builder(publicKey).privateKey(privateKey).keyID("auth-service-key-1").build();
+        new RSAKey.Builder(publicKey)
+            .privateKey(privateKey)
+            .keyID(jwtProperties.getKeyId())
+            .build();
 
     JWKSet jwkSet = new JWKSet(rsaKey);
     return new ImmutableJWKSet<>(jwkSet);
