@@ -1,5 +1,6 @@
-package com.teamsolution.demo.common.base;
+package com.teamsolution.demo.common.base.controller;
 
+import com.teamsolution.demo.common.base.service.BaseService;
 import com.teamsolution.demo.common.response.ApiResponse;
 import java.util.List;
 import org.springframework.http.ResponseEntity;

@@ -1,5 +1,7 @@
-package com.teamsolution.demo.common.base;
+package com.teamsolution.demo.common.base.service.impl;
 
+import com.teamsolution.demo.common.base.mapper.BaseMapper;
+import com.teamsolution.demo.common.base.service.BaseService;
 import com.teamsolution.demo.common.exception.ResourceNotFoundException;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
