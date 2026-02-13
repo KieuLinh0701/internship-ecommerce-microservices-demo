@@ -10,7 +10,6 @@ import jakarta.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

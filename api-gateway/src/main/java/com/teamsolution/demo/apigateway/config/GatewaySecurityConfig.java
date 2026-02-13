@@ -31,7 +31,8 @@ public class GatewaySecurityConfig {
                     .permitAll()
 
                     // All other requests need
-                    .anyExchange().authenticated())
+                    .anyExchange()
+                    .authenticated())
 
         // The gateway only validates the JWT and does NOT check authorities.
         .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> jwt.jwtDecoder(reactiveJwtDecoder())));

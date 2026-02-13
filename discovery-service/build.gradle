@@ -1,0 +1,10 @@
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    // Eureka Server: Service discovery and registration
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+
+    // Spring Boot Test: Testing support
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}

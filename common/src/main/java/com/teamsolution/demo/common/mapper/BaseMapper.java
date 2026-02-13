@@ -1,10 +1,8 @@
 package com.teamsolution.demo.common.mapper;
 
 import java.util.List;
-import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
-@Mapper(componentModel = "spring")
 public interface BaseMapper<E, D> {
   E toEntity(D dto);
 

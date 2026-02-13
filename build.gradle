@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.5' apply false
+    id 'io.spring.dependency-management' version '1.1.6' apply false
+    id 'com.diffplug.spotless' version '6.25.0'
+    id 'checkstyle'
+}
+
+group = 'com.teamsolution.demo'
+version = '1.0.0-SNAPSHOT'
+
+// Áp dụng cho tất cả subprojects
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.diffplug.spotless'
+    apply plugin: 'checkstyle'
+
+    repositories {
+        mavenCentral()
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
+
+    // Spotless configuration - tự động format code
+    spotless {
+        java {
+            googleJavaFormat()
+            removeUnusedImports()
+            trimTrailingWhitespace()
+            endWithNewline()
+        }
+    }
+
+    // Checkstyle configuration
+    checkstyle {
+        toolVersion = '10.12.5'
+        configFile = file("${rootProject.projectDir}/checkstyle.xml")
+        // Nếu không có file checkstyle.xml, comment dòng trên
+    }
+
+    // Tự động chạy spotless trước khi build
+    tasks.named('build') {
+        dependsOn 'spotlessApply'
+    }
+}
+
+// Config riêng cho subprojects (không áp dụng cho root)
+subprojects {
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.teamsolution.demo'
+
+    ext {
+        set('springCloudVersion', '2023.0.3')
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
