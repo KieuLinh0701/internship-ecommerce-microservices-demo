@@ -1,0 +1,38 @@
+plugins {
+    id 'java-library'
+}
+
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    // Lombok: Reduces boilerplate code (getter, setter, constructor, builder, etc.)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Spring Boot Web Starter: Provides REST API support and web server
+    api 'org.springframework.boot:spring-boot-starter-web'
+
+    // Spring Boot Data JPA Starter: Provides database access layer
+    api 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // MapStruct: Generates code for mapping between Entity and DTO
+    api 'org.mapstruct:mapstruct:1.6.3'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+}
+
+// Configure annotation processor order: Lombok must run before MapStruct
+tasks.withType(JavaCompile) {
+    options.compilerArgs += [
+            '-Amapstruct.defaultComponentModel=spring'
+    ]
+}
+
+// Disable bootJar since common is not an executable Spring Boot application
+tasks.named('bootJar') {
+    enabled = false
+}
+
+// Enable jar task to create a library JAR
+tasks.named('jar') {
+    enabled = true
+}

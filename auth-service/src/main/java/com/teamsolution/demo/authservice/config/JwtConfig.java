@@ -35,6 +35,12 @@ public class JwtConfig {
   // JWK Source - RSA Public/Private Key Pair
   @Bean
   public JWKSource<SecurityContext> jwkSource() throws Exception {
+    log.info("===== DEBUG JWT KEYS =====");
+    log.info("JWT_PRIVATE_KEY length: {}", jwtProperties.getPrivateKey() != null ? jwtProperties.getPrivateKey().length() : "NULL");
+    log.info("JWT_PUBLIC_KEY length: {}", jwtProperties.getPublicKey() != null ? jwtProperties.getPublicKey().length() : "NULL");
+    log.info("JWT_PUBLIC_KEY first 50 chars: {}", jwtProperties.getPublicKey() != null ? jwtProperties.getPublicKey().substring(0, Math.min(50, jwtProperties.getPublicKey().length())) : "NULL");
+    log.info("===========================");
+
     RSAPublicKey publicKey = loadPublicKey(jwtProperties.getPublicKey());
     RSAPrivateKey privateKey = loadPrivateKey(jwtProperties.getPrivateKey());
 
@@ -72,9 +78,28 @@ public class JwtConfig {
     };
   }
 
+  //  // Load RSA public key from Base64 string
+  //  private RSAPublicKey loadPublicKey(String key) throws Exception {
+  //    byte[] keyBytes = Base64.getDecoder().decode(key);
+  //    X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
+  //    KeyFactory kf = KeyFactory.getInstance("RSA");
+  //    return (RSAPublicKey) kf.generatePublic(spec);
+  //  }
+  //
+  //  // Load RSA private key from Base64 string
+  //  private RSAPrivateKey loadPrivateKey(String key) throws Exception {
+  //    byte[] keyBytes = Base64.getDecoder().decode(key);
+  //    PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(keyBytes);
+  //    KeyFactory kf = KeyFactory.getInstance("RSA");
+  //    return (RSAPrivateKey) kf.generatePrivate(spec);
+  //  }
+
   // Load RSA public key from Base64 string
   private RSAPublicKey loadPublicKey(String key) throws Exception {
-    byte[] keyBytes = Base64.getDecoder().decode(key);
+    // Remove all whitespace and newlines
+    String cleanKey = key.replaceAll("\\s+", "");
+
+    byte[] keyBytes = Base64.getDecoder().decode(cleanKey);
     X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
     KeyFactory kf = KeyFactory.getInstance("RSA");
     return (RSAPublicKey) kf.generatePublic(spec);
@@ -82,7 +107,10 @@ public class JwtConfig {
 
   // Load RSA private key from Base64 string
   private RSAPrivateKey loadPrivateKey(String key) throws Exception {
-    byte[] keyBytes = Base64.getDecoder().decode(key);
+    // Remove all whitespace and newlines
+    String cleanKey = key.replaceAll("\\s+", "");
+
+    byte[] keyBytes = Base64.getDecoder().decode(cleanKey);
     PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(keyBytes);
     KeyFactory kf = KeyFactory.getInstance("RSA");
     return (RSAPrivateKey) kf.generatePrivate(spec);

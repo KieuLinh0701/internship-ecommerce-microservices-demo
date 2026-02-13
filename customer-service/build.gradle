@@ -1,0 +1,38 @@
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    // Spring Data JPA: Provides support for the Java Persistence API for database access
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Flyway Core: Database migration tool to manage versioned schema changes
+    implementation 'org.flywaydb:flyway-core'
+
+    // Spring Web Starter: Provides RESTful web services and embedded Tomcat server
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Flyway PostgreSQL support: Enables Flyway to work with PostgreSQL database
+    implementation 'org.flywaydb:flyway-database-postgresql'
+
+    // Eureka Client: Allows this service to register with Eureka Service Registry
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    // Spring Security OAuth2 Resource Server: Enables JWT-based authentication for APIs
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+
+    // Common module: Shared utilities and models
+    implementation project(':common')
+
+    // Spring Boot DevTools: Provides hot reload and developer-friendly features
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // PostgreSQL Driver: JDBC driver for connecting to PostgreSQL database
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Lombok: Reduces boilerplate code (getters, setters, constructors, etc.)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Spring Boot Test Starter: Provides testing utilities for Spring Boot applications
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}

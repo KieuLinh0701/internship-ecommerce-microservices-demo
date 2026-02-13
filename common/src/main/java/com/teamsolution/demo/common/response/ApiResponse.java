@@ -15,14 +15,14 @@ public class ApiResponse<T> {
   private LocalDateTime timestamp;
 
   public static <T> ApiResponse<T> success(String message, T data) {
-    return new ApiResponse<>(true, message, data, LocalDateTime.now());
+    return new ApiResponse<T>(true, message, data, LocalDateTime.now());
   }
 
   public static <T> ApiResponse<T> success(T data) {
-    return new ApiResponse<>(true, "Success", data, LocalDateTime.now());
+    return new ApiResponse<T>(true, "Success", data, LocalDateTime.now());
   }
 
   public static <T> ApiResponse<T> failure(String message) {
-    return new ApiResponse<>(false, message, null, LocalDateTime.now());
+    return new ApiResponse<T>(false, message, null, LocalDateTime.now());
   }
 }
