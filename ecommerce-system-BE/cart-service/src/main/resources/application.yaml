@@ -22,6 +22,9 @@ spring:
   application:
     name: cart-service
 
+  profiles:
+    active: local
+
   datasource:
     url: jdbc:postgresql://localhost:5432/cart_service_db
     username: postgres
@@ -76,8 +79,7 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.springframework.data.elasticsearch: DEBUG
     co.elastic.clients: DEBUG
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [traceId=%X{traceId}] %-5level %logger{36} - %msg%n"
+    io.opentelemetry.exporter: OFF
 
 openapi:
   title: Cart Service API
@@ -94,18 +96,19 @@ management:
     health:
       show-details: always
   metrics:
+    export:
+      enabled: true
     tags:
       application: ${spring.application.name}
   tracing:
     sampling:
       probability: 1.0
-
-otel:
-  exporter:
-    otlp:
-      endpoint: http://otel-collector:4317
-      protocol: grpc
-  propagators: tracecontext,baggage
+  observations:
+    key-values:
+      application: ${spring.application.name}
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
 
 internal:
   secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

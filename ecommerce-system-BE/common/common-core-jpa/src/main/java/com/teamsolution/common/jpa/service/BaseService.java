@@ -1,5 +1,7 @@
 package com.teamsolution.common.jpa.service;
 
+import java.util.List;
+
 public interface BaseService<E, D, ID> {
 
     E getEntityById(ID id);
@@ -15,7 +17,10 @@ public interface BaseService<E, D, ID> {
     D update(ID id, E entity);
 
     E saveEntity(E entity);
+
     D save(E entity);
+
+    List<E> saveAllEntity(List<E> entity);
 
     void delete(ID id);
 

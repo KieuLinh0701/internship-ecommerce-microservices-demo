@@ -2,10 +2,12 @@ package com.teamsolution.inventory.repository;
 
 import com.teamsolution.common.jpa.repository.BaseRepository;
 import com.teamsolution.inventory.entity.ProductVariant;
-import java.util.List;
-import java.util.UUID;
+import com.teamsolution.inventory.enums.ProductVariantStatus;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+import java.util.UUID;
 
 public interface ProductVariantRepository
     extends BaseRepository<ProductVariant, UUID>, JpaSpecificationExecutor<ProductVariant> {
@@ -22,4 +24,6 @@ public interface ProductVariantRepository
   List<ProductVariant> findVariantsByProductId(UUID productId);
 
   boolean existsBySku(String sku);
+
+    List<ProductVariant> findAllByIdInAndIsDeletedFalseAndStatus(List<UUID> ids, ProductVariantStatus status);
 }

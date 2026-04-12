@@ -7,6 +7,8 @@ import com.teamsolution.common.jpa.service.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 public abstract class BaseServiceImpl<E, D, ID>
         implements BaseService<E, D, ID> {
@@ -27,6 +29,11 @@ public abstract class BaseServiceImpl<E, D, ID>
     @Override
     public E saveEntity(E entity) {
         return repository.save(entity);
+    }
+
+    @Override
+    public List<E> saveAllEntity(List<E> entity) {
+        return repository.saveAll(entity);
     }
 
     @Override

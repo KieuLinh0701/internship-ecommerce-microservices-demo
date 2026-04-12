@@ -4,12 +4,13 @@ server:
 grpc:
   server:
     port: 9096
-    security:
-      enabled: false
 
 spring:
   application:
     name: inventory-service
+
+  profiles:
+    active: local
 
   datasource:
     url: jdbc:postgresql://localhost:5432/inventory_service_db
@@ -31,9 +32,6 @@ spring:
     enabled: true
     baseline-on-migrate: true
     locations: classpath:db/migration
-
-  elasticsearch:
-    uris: http://localhost:9200
 
   kafka:
     bootstrap-servers: localhost:9092
@@ -71,6 +69,8 @@ logging:
       org.hibernate.type.descriptor.sql.BasicBinder: TRACE
       org.springframework.data.elasticsearch: DEBUG
       co.elastic.clients: DEBUG
+      io.opentelemetry.exporter: OFF
+
 
 openapi:
   title: Inventory Service API
@@ -97,11 +97,16 @@ management:
     health:
       show-details: always
   metrics:
+    export:
+      enabled: true
     tags:
       application: ${spring.application.name}
   tracing:
     sampling:
       probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
 
 cloudinary:
   cloud-name: dcj9cnls7
@@ -121,13 +126,6 @@ outbox:
   scheduler:
     fixed-delay-ms: 5000
     retry-delay-seconds: 5
-
-otel:
-  exporter:
-    otlp:
-      endpoint: http://otel-collector:4317
-      protocol: grpc
-  propagators: tracecontext,baggage
 
 internal:
   secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613
