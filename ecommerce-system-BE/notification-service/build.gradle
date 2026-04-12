@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.teamsolution.notification'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':common:common-core-grpc-client')
+    implementation project(':common:common-core-kafka')
+    implementation project(':common:common-core-jpa')
+
+    // Grpc Client
+    implementation 'net.devh:grpc-client-spring-boot-starter:3.1.0.RELEASE'
+
+    // Kafka
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    // WebSocket
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+    // Email
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+    // Flyway
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-database-postgresql'
+
+    // MapStruct processor
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+    runtimeOnly 'org.postgresql:postgresql'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}

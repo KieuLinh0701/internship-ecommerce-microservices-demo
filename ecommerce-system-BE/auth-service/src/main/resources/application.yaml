@@ -1,0 +1,136 @@
+server:
+  port: 9001
+
+grpc:
+  server:
+    port: 9091
+    security:
+      enabled: false
+  client:
+    customer-service:
+      address: discovery:///CUSTOMER-SERVICE
+      negotiation-type: plaintext
+  retry:
+    max-attempts: 3
+    base-delay-ms: 100
+  timeout: 5s
+
+spring:
+  application:
+    name: auth-service
+
+  profiles:
+    active: local
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_service_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      observation-enabled: false
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  file:
+    name: logs/auth-service.log
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    io.opentelemetry.exporter: OFF
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadata-map:
+      grpcPort: 9091
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+jwt:
+  private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7Ilr62Ngzk0JswQ5YRGXK7oz803wjHSBvJrqCi7WtW3ufnv3t4SSi2geQPrJYk+8MIdXilDHNWc67i8EfZjc2/uh3u+Azz0XxhsjzesnkpIndUoVGcfXZ+zyDXSF9jTeNnbZxfD0R+WJ2od9rWEY3gN3Hxr0rStAkQ4iS2pvu2LLxvprppZ8evWuW4FON9eeOJOyib58fUck6+D9BqAf2Dl6XH3IkGS/HVuMgTiQLS0BRVs15wbyDuX71AyfiZyfNOzPwILFaj/nEsHGrfiWKQulrrq2G25Mxe3GWcWm+OKhB1RXI2ZCIJl2YQG0z+IkYS0GAzRBrkNLvBaLgCxlNAgMBAAECggEABk4CArGLlzE+66sVcKPdShj/ZwU5CXXRwezsG7nZRR3v7FDO/VS4h0QRPSrfl1xkkWQScK/Nfb2o2Wi7+PLYqWGtM1uBEj3JfXmtC4b3hlyEyJAfLWBpiA6O214n4rL/TCYkH26wIArm5lhNzrAKrZQJ5NEtTmgW2yHrWAdFeaaEoEaSb3SvYQzhw3CmyyR9jfq/0jNCAFBa7HRJqGHBEmmI+qNqkgkKCRGMMF3lFR3gZkuAEGp8q7hJdFAHbK/tC9A8OPsf+Jd4xkfZZkdmwaC9Yej4uUEBs06M0tbQK5DOPUgnvp5YRo1/ZjcKxLINApkLDM+c0zhZBHNrOnHtgQKBgQDf+wSQiu1IlV8m4BeZOBvoJZdwcFLqA4fInFmwsM8PNeCglZQpBAa4qVOf9HLhClXRNnZ+kwI3jWWB1MGR6fFqG1/RwG8h/EfT65PrhxDWeOoXxjKk+W9b172a2yjQAcPUseMICYSTaW8dnGSJDrvTwpU+A25SVTbfr0W6nK48twKBgQDV4uCuxcdQTnB+LxV0VIsThyBKdmSRcrRLMULzIDhW4FcWkM123rngnKt25DHRfsK1HTTnfaQH8+XwiOVTkZQmEqLMtkMSpcRHf/7hQgPp2NNeUx/m5zFwW5FNS46+j9JMXR3+Hxb4142/jamwspdovOSpxHtOdFw90rarSxzeGwKBgQDXI5/AzxEYlRGun7VLIQ/9Lo6GG/4odXephDTKeSqKa6/1z3de5lUmbs66Z+0op+rCaFPtRHvurEyCJsA/zbxrtRuWuAaHWHIN5sxQgY301HPWnjPrLwR97X5cDoLnOarG1I9EGxBTIATxJlWTKKnVv6Pmyxje0KdCuHJ7yx+5hQKBgHfiiUmtNgC/VrKDtaTU1neFoAXcwpX8Ey6qV/pqrumTKX1OgLwGL23Eox8q3Pmt8XkO+95dQBntDY97S/9BdCa6/2F7L7E+FPx2s+iS1hq3HBKcyR7lq4Js8M7AcSxC9P80mmEcEAY+3AboYprWH6PnbMvzg6H/+sv0VctBeNbNAoGBAK7mXK04Hd8D4V7rFkSJrWJHNic1TdQd+WT/kz8EXW0cIOLMw4ffE51O1d9u6LJlnPWNoVg7cA09ZNa5VuPmbNnfezvSLjr9PPbTjDaUvod4MFJmKBhStaca0JCHseJQUk/2a0KW0AChm9oTyWjPNwl1oeVhIM7k+fstNK/a3SGr
+  public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuyJa+tjYM5NCbMEOWERlyu6M/NN8Ix0gbya6gou1rVt7n5797eEkotoHkD6yWJPvDCHV4pQxzVnOu4vBH2Y3Nv7od7vgM89F8YbI83rJ5KSJ3VKFRnH12fs8g10hfY03jZ22cXw9EflidqHfa1hGN4Ddx8a9K0rQJEOIktqb7tiy8b6a6aWfHr1rluBTjfXnjiTsom+fH1HJOvg/QagH9g5elx9yJBkvx1bjIE4kC0tAUVbNecG8g7l+9QMn4mcnzTsz8CCxWo/5xLBxq34likLpa66thtuTMXtxlnFpvjioQdUVyNmQiCZdmEBtM/iJGEtBgM0Qa5DS7wWi4AsZTQIDAQAB
+  key-id: "auth-service-v1"
+  issuer: "http://localhost:9001"
+  access-token-expiration: 3600
+  refresh-token-expiration: 604800
+
+security:
+  otp:
+    max-resend: 3
+    cooldown-seconds: 30
+    expires-in-seconds: 300
+    session-expires-in-seconds: 1800
+    max_attempts: 3
+  reset-token:
+    expires-in-seconds: 300
+  login:
+    max-attempts: 2
+    lock-duration-minutes: 1
+    max-attempts-permanent: 3
+
+openapi:
+  title: Auth Service API
+  description: Authentication and authorization
+  server-url: http://localhost:9000/api/auth
+  server-description: Gateway - Local
+
+outbox:
+  scheduler:
+    fixed-delay-ms: 5000
+    retry-delay-seconds: 5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      enabled: true
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+  observations:
+    key-values:
+      application: ${spring.application.name}
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+
+internal:
+  secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

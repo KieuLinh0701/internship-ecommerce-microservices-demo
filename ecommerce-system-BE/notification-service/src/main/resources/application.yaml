@@ -1,0 +1,146 @@
+server:
+  port: 9008
+
+grpc:
+  server:
+    port: 9098
+    ecurity:
+      enabled: false
+  client:
+    auth-service:
+      address: discovery:///auth-service
+      negotiation-type: plaintext
+    customer-service:
+      address: discovery:///customer-service
+      negotiation-type: plaintext
+  retry:
+    max-attempts: 3
+    base-delay-ms: 100
+  timeout: 5s
+
+spring:
+  application:
+    name: notification-service
+
+  profiles:
+    active: local
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/notification_service_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: notification-group
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: true
+    listener:
+      ack-mode: RECORD
+      observation-enabled: false
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadata-map:
+      grpcPort: 9097
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+logging:
+  file:
+    name: logs/notification-service.log
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    io.opentelemetry.exporter: OFF
+
+websocket:
+  allowed-origins: http://localhost:3000
+
+openapi:
+  title: Notification Service API
+  description: Notification Service API Documentation
+  server-url: http://localhost:9000/api/notifications
+  server-description: Gateway - Local
+
+kafka:
+  consumer:
+    dlt:
+      suffix: ".DLT"
+    retry:
+      initial-interval-ms: 2000
+      multiplier: 2.0
+      max-kafka-retry: 3
+      max-manual-retry: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      enabled: true
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+  observations:
+    key-values:
+      application: ${spring.application.name}
+  otlp:
+    tracing:
+      endpoint: http://otel-collector:4318/v1/traces
+
+internal:
+  secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

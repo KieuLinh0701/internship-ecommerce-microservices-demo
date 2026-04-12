@@ -1,0 +1,2 @@
+com.teamsolution.common.core.config.CommonCoreAutoConfiguration
+com.teamsolution.common.core.config.OpenApiAutoConfiguration

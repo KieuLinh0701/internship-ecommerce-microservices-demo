@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package proto.customer;
+
+import "google/protobuf/empty.proto";
+
+option java_package = "com.teamsolution.proto.customer";
+option java_multiple_files = true;
+
+service CustomerService {
+  rpc CreateCustomer(CreateCustomerRequest) returns (google.protobuf.Empty);
+  rpc GetCustomerIdByAccountId(GetCustomerIdByAccountIdRequest) returns (GetCustomerIdByAccountIdResponse);
+  rpc GetAddressByCustomerIdAndAddressId(GetAddressByCustomerIdAndAddressIdRequest) returns (GetAddressByCustomerIdAndAddressIdResponse);
+  rpc GetCustomerNameByCustomerId(GetCustomerNameByCustomerIdRequest) returns (GetCustomerNameByCustomerIdResponse);
+  rpc GetAccountIdByCustomerId(GetAccountIdByCustomerIdRequest) returns (GetAccountIdByCustomerIdResponse);
+}
+
+message GetAccountIdByCustomerIdRequest {
+  string customer_id = 1;
+}
+
+message GetAccountIdByCustomerIdResponse {
+  string account_id = 1;
+}
+
+message GetCustomerNameByCustomerIdRequest {
+  string customer_id = 1;
+}
+
+message GetCustomerNameByCustomerIdResponse {
+  string name = 1;
+}
+
+message GetAddressByCustomerIdAndAddressIdRequest {
+  string customer_id = 1;
+  string address_id = 2;
+}
+
+message GetAddressByCustomerIdAndAddressIdResponse {
+  string id = 1;
+  string name = 2;
+  string phone = 3;
+  int32 city_code = 4;
+  string city_name = 5;
+  int32 ward_code = 6;
+  string ward_name = 7;
+  string detail = 8;
+}
+
+message GetCustomerIdByAccountIdRequest {
+  string account_id = 1;
+}
+
+message GetCustomerIdByAccountIdResponse {
+  string customer_id = 1;
+}
+
+message CreateCustomerRequest {
+  string account_id = 1;
+  string full_name = 2;
+  string avatar_url = 3;
+  string phone = 4;
+}

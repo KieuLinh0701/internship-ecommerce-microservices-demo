@@ -1,0 +1,25 @@
+dependencies {
+    api project(':common:common-tracing')
+
+    api 'org.springframework.boot:spring-boot-starter-web'
+    api 'org.springframework.boot:spring-boot-starter-security'
+
+    api 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+
+    api 'org.mapstruct:mapstruct:1.6.3'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+
+    api 'com.github.f4b6a3:uuid-creator:5.0.0'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += ['-Amapstruct.defaultComponentModel=spring']
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}

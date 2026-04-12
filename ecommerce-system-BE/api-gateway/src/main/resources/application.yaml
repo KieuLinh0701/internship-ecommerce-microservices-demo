@@ -1,0 +1,151 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-gateway
+
+  profiles:
+    active: local
+
+  reactor:
+    context-propagation: auto
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - RewritePath=/api/auth/(?<segment>.*), /$\{segment}
+
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/customers/**
+          filters:
+            - RewritePath=/api/customers/(?<segment>.*), /$\{segment}
+
+        - id: cart-service
+          uri: lb://cart-service
+          predicates:
+            - Path=/api/cart/**
+          filters:
+            - RewritePath=/api/cart/(?<segment>.*), /$\{segment}
+
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - RewritePath=/api/orders/(?<segment>.*), /$\{segment}
+
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/api/payments/**
+          filters:
+            - RewritePath=/api/payments/(?<segment>.*), /$\{segment}
+
+        - id: inventory-service
+          uri: lb://inventory-service
+          predicates:
+            - Path=/api/inventory/**
+          filters:
+            - RewritePath=/api/inventory/(?<segment>.*), /$\{segment}
+
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/notifications/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
+
+        - id: admin-bff
+          uri: lb://admin-bff
+          predicates:
+            - Path=/api/admin/**
+          filters:
+            - RewritePath=/api/admin/(?<segment>.*), /$\{segment}
+
+        - id: search-service
+          uri: lb://search-service
+          predicates:
+            - Path=/api/search/**
+          filters:
+            - RewritePath=/api/search/(?<segment>.*), /$\{segment}
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 39493564948-a3it1eu5hj5ogdli0p4hark3l8u205sh.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+            redirect-uri: http://localhost:9000/login/oauth2/code/google
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: auth-service
+        url: /api/auth/v3/api-docs
+      - name: customer-service
+        url: /api/customers/v3/api-docs
+      - name: cart-service
+        url: /api/cart/v3/api-docs
+      - name: order-service
+        url: /api/orders/v3/api-docs
+      - name: payment-service
+        url: /api/payments/v3/api-docs
+      - name: inventory-service
+        url: /api/inventory/v3/api-docs
+      - name: notification-service
+        url: /api/notifications/v3/api-docs
+      - name: admin-bff
+        url: /api/admin/v3/api-docs
+      - name: search-service
+        url: /api/search/v3/api-docs
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  file:
+    name: logs/api-gateway.log
+  level:
+    io.opentelemetry.exporter: OFF
+    org.springframework.security.oauth2.client: DEBUG
+
+auth-service:
+  jwks-uri: http://auth-service/jwks
+  google-login-uri: http://auth-service/oauth2/google
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://otel-collector:4318/v1/traces
+

@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.teamsolution.grpc.client'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api project(':common:common-core-grpc')
+
+    api 'net.devh:grpc-client-spring-boot-starter:3.1.0.RELEASE'
+}
+
+test {
+    useJUnitPlatform()
+}

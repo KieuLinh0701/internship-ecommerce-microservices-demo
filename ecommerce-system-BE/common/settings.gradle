@@ -1,0 +1,9 @@
+rootProject.name = 'common'
+
+include 'common-core'
+include 'common-core-grpc'
+include 'common-core-grpc-client'
+include 'common-core-grpc-server'
+include 'common-core-kafka'
+include 'common-core-jpa'
+include 'common-redis'

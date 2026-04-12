@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package proto.auth;
+
+import "google/protobuf/empty.proto";
+
+option java_package = "com.teamsolution.proto.grpc.auth";
+option java_multiple_files = true;
+
+service AuthService {
+  rpc GetAllAdminAccountIdsAndAccountRoles(google.protobuf.Empty) returns (GetAllAdminAccountIdsAndAccountRolesResponse);
+  rpc GetAccountRoleIdByAccountIdAndRoleCustomer(GetAccountRoleIdByAccountIdAndRoleCustomerRequest) returns (GetAccountRoleIdByAccountIdAndRoleCustomerResponse);
+}
+
+message GetAccountRoleIdByAccountIdAndRoleCustomerRequest {
+  string account_id = 1;
+}
+
+message GetAccountRoleIdByAccountIdAndRoleCustomerResponse {
+  string account_role_id = 1;
+}
+
+message GetAllAdminAccountIdsAndAccountRolesResponse {
+  map<string, string> account_id_account_role_id_map = 1;
+}

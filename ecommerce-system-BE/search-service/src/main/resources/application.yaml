@@ -1,0 +1,95 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: search-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/search_service_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  elasticsearch:
+    uris: http://localhost:9200
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: search-group
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: true
+    listener:
+      ack-mode: RECORD
+
+logging:
+  file:
+    name: logs/search-service.log
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.data.elasticsearch: DEBUG
+    co.elastic.clients: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [traceId=%X{traceId}] %-5level %logger{36} - %msg%n"
+
+openapi:
+  title: Search Service API
+  description: Search Service API Documentation
+  server-url: http://localhost:9000/api/search
+  server-description: Gateway - Local
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+
+otel:
+  exporter:
+    otlp:
+      endpoint: http://otel-collector:4317
+      protocol: grpc
+  propagators: tracecontext,baggage
+
+internal:
+  secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

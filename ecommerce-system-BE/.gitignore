@@ -1,0 +1,23 @@
+### Gradle ###
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+
+### Java ###
+*.jar
+!gradle/wrapper/*.jar
+
+### Logs ###
+logs/
+*.log
+**/logs/
+
+### Module-specific builds ###
+api-gateway/build/
+auth-service/build/
+common/build/
+customer-service/build/
+discovery-service/build/

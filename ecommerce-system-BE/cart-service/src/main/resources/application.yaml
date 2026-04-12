@@ -1,0 +1,111 @@
+server:
+  port: 9004
+
+grpc:
+  server:
+    port: 9094
+    security:
+      enabled: false
+  client:
+    customer-service:
+      address: discovery:///CUSTOMER-SERVICE
+      negotiation-type: plaintext
+    inventory-service:
+      address: discovery:///INVENTORY-SERVICE
+      negotiation-type: plaintext
+  retry:
+    max-attempts: 3
+    base-delay-ms: 100
+  timeout: 5s
+
+spring:
+  application:
+    name: cart-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cart_service_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: inventory-group
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: true
+      listener:
+        ack-mode: RECORD
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadata-map:
+      grpcPort: 9094
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+logging:
+  file:
+    name: logs/cart-service.log
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.data.elasticsearch: DEBUG
+    co.elastic.clients: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [traceId=%X{traceId}] %-5level %logger{36} - %msg%n"
+
+openapi:
+  title: Cart Service API
+  description: Cart Service API Documentation
+  server-url: http://localhost:9000/api/cart
+  server-description: Gateway - Local
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+
+otel:
+  exporter:
+    otlp:
+      endpoint: http://otel-collector:4317
+      protocol: grpc
+  propagators: tracecontext,baggage
+
+internal:
+  secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

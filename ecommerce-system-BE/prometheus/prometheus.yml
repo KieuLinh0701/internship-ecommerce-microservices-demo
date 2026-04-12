@@ -1,0 +1,49 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: redis_exporter
+    static_configs:
+      - targets: ["redis-exporter:9121"]
+
+  - job_name: api-gateway
+    static_configs:
+        - targets: [ "host.docker.internal:9000" ]
+    metrics_path: /actuator/prometheus
+
+  - job_name: auth-service
+    static_configs:
+        - targets: [ "host.docker.internal:9001" ]
+    metrics_path: /actuator/prometheus
+
+#  - job_name: cart-service
+#    static_configs:
+#      - targets: [ "host.docker.internal:9003" ]
+#    metrics_path: /actuator/prometheus
+
+  - job_name: customer-service
+    static_configs:
+      - targets: [ "host.docker.internal:9003" ]
+    metrics_path: /actuator/prometheus
+
+  - job_name: inventory-service
+    static_configs:
+        - targets: [ "host.docker.internal:9006" ]
+    metrics_path: /actuator/prometheus
+
+  - job_name: notification-service
+    static_configs:
+      - targets: [ "host.docker.internal:9008" ]
+    metrics_path: /actuator/prometheus
+
+#  - job_name: order-service
+#    static_configs:
+#      - targets: [ "host.docker.internal:9004" ]
+#    metrics_path: /actuator/prometheus
+#
+#  - job_name: payment-service
+#    static_configs:
+#      - targets: [ "host.docker.internal:9005" ]
+#    metrics_path: /actuator/prometheus
+
+

@@ -1,0 +1,133 @@
+server:
+  port: 9006
+
+grpc:
+  server:
+    port: 9096
+    security:
+      enabled: false
+
+spring:
+  application:
+    name: inventory-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inventory_service_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  elasticsearch:
+    uris: http://localhost:9200
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: inventory-group
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: true
+    listener:
+      ack-mode: RECORD
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadata-map:
+      grpcPort: 9096
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+logging:
+    file:
+      name: logs/inventory-service.log
+    level:
+      root: INFO
+      org.springframework.web: INFO
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+      org.springframework.data.elasticsearch: DEBUG
+      co.elastic.clients: DEBUG
+
+openapi:
+  title: Inventory Service API
+  description: Inventory Service API Documentation
+  server-url: http://localhost:9000/api/inventory
+  server-description: Gateway - Local
+
+kafka:
+  consumer:
+    dlt:
+      suffix: ".DLT"
+    retry:
+      initial-interval-ms: 2000
+      multiplier: 2.0
+      max-kafka-retry: 3
+      max-manual-retry: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+
+cloudinary:
+  cloud-name: dcj9cnls7
+  api-key: 913188972473327
+  api-secret: 85BUYLBn3CppJiAZaewqcLzNPZE
+
+  folders:
+    product: products
+
+temp-image-cleanup:
+  fixed-rate-ms: 3600000
+  ttl-minutes: 60
+product-image:
+  max-files: 5
+
+outbox:
+  scheduler:
+    fixed-delay-ms: 5000
+    retry-delay-seconds: 5
+
+otel:
+  exporter:
+    otlp:
+      endpoint: http://otel-collector:4317
+      protocol: grpc
+  propagators: tracecontext,baggage
+
+internal:
+  secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

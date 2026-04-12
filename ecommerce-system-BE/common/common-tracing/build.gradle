@@ -1,0 +1,20 @@
+dependencies {
+    api platform('io.opentelemetry:opentelemetry-bom:1.43.0')
+    implementation 'io.micrometer:micrometer-observation'
+    api 'io.micrometer:micrometer-tracing-bridge-otel'
+    api 'io.opentelemetry:opentelemetry-exporter-otlp'
+    api 'net.logstash.logback:logstash-logback-encoder:7.4'
+    api 'org.slf4j:slf4j-api'
+    api 'org.springframework.boot:spring-boot-autoconfigure'
+    api 'org.springframework.boot:spring-boot'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+}
+
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}
