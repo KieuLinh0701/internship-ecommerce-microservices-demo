@@ -10,18 +10,12 @@ repositories {
 }
 
 dependencies {
-    implementation project(':common:common-core-grpc')
+    implementation project(':common:common-core-grpc-server')
     implementation project(':common:common-core-jpa')
     implementation project(':common:common-core-kafka')
 
     // Cloudinary
     implementation 'com.cloudinary:cloudinary-http44:1.39.0'
-
-    // Grpc Client
-    implementation 'net.devh:grpc-client-spring-boot-starter:3.1.0.RELEASE'
-
-    // Kafka
-    implementation 'org.springframework.kafka:spring-kafka'
 
     // Flyway
     implementation 'org.flywaydb:flyway-core'
@@ -38,10 +32,6 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {

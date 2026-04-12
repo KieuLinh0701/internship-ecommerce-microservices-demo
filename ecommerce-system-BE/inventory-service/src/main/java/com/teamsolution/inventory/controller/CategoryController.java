@@ -4,14 +4,15 @@ import com.teamsolution.common.core.dto.common.response.ApiResponse;
 import com.teamsolution.inventory.dto.response.CategoryDetailResponse;
 import com.teamsolution.inventory.dto.response.CategorySummaryResponse;
 import com.teamsolution.inventory.service.customer.CategoryService;
-import java.util.List;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/categories")
@@ -27,7 +28,7 @@ public class CategoryController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<ApiResponse<CategoryDetailResponse>> getActiveCategoryBySlug(
+  public ResponseEntity<ApiResponse<CategoryDetailResponse>> getActiveCategoryById(
       @PathVariable UUID id) {
     CategoryDetailResponse categoryDto = categoryService.getActiveCategoryById(id);
     return ResponseEntity.ok(ApiResponse.success(categoryDto));

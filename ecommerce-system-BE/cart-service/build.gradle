@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':common:common-core-grpc')
+    implementation project(':common:common-core-grpc-client')
     implementation project(':common:common-core-kafka')
     implementation project(':common:common-core-jpa')
 
