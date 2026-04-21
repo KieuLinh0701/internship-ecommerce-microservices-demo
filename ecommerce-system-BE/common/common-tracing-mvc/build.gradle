@@ -1,0 +1,12 @@
+dependencies {
+    api project(':common:common-tracing-core')
+
+    api 'org.springframework.boot:spring-boot-starter-web'
+}
+
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}

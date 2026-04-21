@@ -4,7 +4,6 @@ import com.teamsolution.common.core.enums.inventory.ProductStatus;
 import com.teamsolution.common.core.util.JsonUtils;
 import com.teamsolution.common.kafka.event.inventory.ProductChangedEvent;
 import com.teamsolution.common.kafka.event.inventory.ProductStatusChangedEvent;
-import com.teamsolution.common.tracing.context.TraceContext;
 import com.teamsolution.inventory.entity.Brand;
 import com.teamsolution.inventory.entity.Category;
 import com.teamsolution.inventory.entity.OutboxEvent;
@@ -13,6 +12,7 @@ import com.teamsolution.inventory.enums.EntityName;
 import com.teamsolution.inventory.enums.InventoryEventType;
 import com.teamsolution.inventory.kafka.producer.ProductProducer;
 import com.teamsolution.inventory.repository.OutboxEventRepository;
+import com.teamsolution.tracing.context.TraceContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

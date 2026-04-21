@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':common:common-tracing')
+    implementation project(':common:common-tracing-webflux')
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -34,6 +34,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+    configurations.all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    }
 
     implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.3.0'
 }

@@ -3,12 +3,12 @@ package com.teamsolution.inventory.kafka.producer.impl;
 import com.teamsolution.common.core.enums.notification.NotificationChannel;
 import com.teamsolution.common.core.util.JsonUtils;
 import com.teamsolution.common.kafka.event.inventory.InventoryReservationFailedEvent;
-import com.teamsolution.common.tracing.context.TraceContext;
 import com.teamsolution.inventory.entity.OutboxEvent;
 import com.teamsolution.inventory.enums.EntityName;
 import com.teamsolution.inventory.enums.InventoryEventType;
 import com.teamsolution.inventory.kafka.producer.InventoryProducer;
 import com.teamsolution.inventory.repository.OutboxEventRepository;
+import com.teamsolution.tracing.context.TraceContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -5,7 +5,6 @@ import com.teamsolution.common.core.exception.enums.CommonErrorCode;
 import com.teamsolution.common.kafka.config.properties.OutboxProperties;
 import com.teamsolution.common.kafka.enums.OutboxEventStatus;
 import com.teamsolution.common.kafka.enums.PaymentEventStatus;
-import com.teamsolution.common.kafka.event.payment.PaymentEvent;
 import com.teamsolution.common.kafka.topics.KafkaTopics;
 import com.teamsolution.common.tracing.context.TraceContext;
 import com.teamsolution.payment.entity.FailedEvent;
