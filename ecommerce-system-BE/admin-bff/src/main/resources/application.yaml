@@ -24,6 +24,7 @@ consumer:
     - notification-service
     - inventory-service
     - search-service
+    - cart-service
 
   services:
     notification: notification-service

@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: search-service
+  profiles:
+    active: local
 
   datasource:
     url: jdbc:postgresql://localhost:5432/search_service_db
@@ -45,6 +47,16 @@ spring:
     listener:
       ack-mode: RECORD
 
+kafka:
+  consumer:
+    dlt:
+      suffix: ".DLT"
+    retry:
+      initial-interval-ms: 2000
+      multiplier: 2.0
+      max-kafka-retry: 3
+      max-manual-retry: 3
+
 logging:
   file:
     name: logs/search-service.log
@@ -55,8 +67,6 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.springframework.data.elasticsearch: DEBUG
     co.elastic.clients: DEBUG
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [traceId=%X{traceId}] %-5level %logger{36} - %msg%n"
 
 openapi:
   title: Search Service API
@@ -68,6 +78,11 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadata-map:
+      grpcPort: 9100
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
 
 management:
   endpoints:
@@ -78,18 +93,16 @@ management:
     health:
       show-details: always
   metrics:
+    export:
+      enabled: true
     tags:
       application: ${spring.application.name}
   tracing:
     sampling:
       probability: 1.0
-
-otel:
-  exporter:
-    otlp:
-      endpoint: http://otel-collector:4317
-      protocol: grpc
-  propagators: tracecontext,baggage
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
 
 internal:
   secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

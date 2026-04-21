@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package proto.media;
+
+option java_package = "com.teamsolution.proto.grpc.media";
+option java_multiple_files = true;
+
+service MediaService {
+  rpc UploadImages(UploadImagesRequest) returns (UploadImagesResponse);
+  rpc DeleteImages(DeleteImagesRequest) returns (DeleteImagesResponse);
+}
+
+message ImageRequest {
+  bytes data = 1;
+  string original_filename = 2;
+}
+
+message ImageResponse {
+  string public_id = 1;
+  string url = 2;
+}
+
+message UploadImagesRequest {
+  repeated ImageRequest images = 1;
+  string folder_type = 2;
+}
+
+message UploadImagesResponse {
+  repeated ImageResponse results = 1;
+}
+
+message DeleteImagesRequest {
+  repeated string public_ids = 1;
+}
+
+message DeleteImagesResponse {
+  bool success = 1;
+}

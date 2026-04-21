@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package proto.cart;
+
+option java_package = "com.teamsolution.proto.grpc.cart";
+option java_multiple_files = true;
+
+service CartService {
+  rpc GetCartItemByIdsAndCustomerId(GetCartItemByIdsAndCustomerIdRequest) returns (GetCartItemByIdsAndCustomerIdResponse);
+}
+
+message GetCartItemByIdsAndCustomerIdRequest {
+  string customer_id = 1;
+  repeated string cart_item_ids = 2;
+}
+
+message GetCartItemByIdsAndCustomerIdResponse {
+  repeated CartItem items = 1;
+}
+
+message CartItem {
+  string variant_id = 1;
+  int32 quantity = 2;
+}

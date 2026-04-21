@@ -11,14 +11,12 @@ repositories {
 
 dependencies {
     implementation project(':common:common-core-grpc-client')
+    implementation project(':common:common-core-grpc-server')
     implementation project(':common:common-core-kafka')
     implementation project(':common:common-core-jpa')
 
-    // Grpc Client
-    implementation 'net.devh:grpc-client-spring-boot-starter:3.1.0.RELEASE'
-
-    // Kafka
-    implementation 'org.springframework.kafka:spring-kafka'
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
     // Flyway
     implementation 'org.flywaydb:flyway-core'

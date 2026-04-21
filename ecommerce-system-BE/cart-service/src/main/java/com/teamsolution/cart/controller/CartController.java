@@ -1,7 +1,7 @@
 package com.teamsolution.cart.controller;
 
 import com.teamsolution.cart.dto.response.CartResponse;
-import com.teamsolution.cart.service.CartService;
+import com.teamsolution.cart.service.customer.CartService;
 import com.teamsolution.common.core.dto.common.response.ApiResponse;
 import com.teamsolution.common.core.security.SecurityUtils;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/me")
+@RequestMapping("/cart")
 @RequiredArgsConstructor
 public class CartController {
 

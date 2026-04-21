@@ -18,7 +18,6 @@ grpc:
 spring:
   application:
     name: auth-service
-
   profiles:
     active: local
 

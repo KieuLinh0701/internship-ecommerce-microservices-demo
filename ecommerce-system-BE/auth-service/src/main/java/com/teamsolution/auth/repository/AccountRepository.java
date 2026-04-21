@@ -2,12 +2,11 @@ package com.teamsolution.auth.repository;
 
 import com.teamsolution.auth.entity.Account;
 import com.teamsolution.common.jpa.repository.BaseSoftDeleteRepository;
+import java.util.Optional;
+import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
-import java.util.Optional;
-import java.util.UUID;
 
 public interface AccountRepository
     extends BaseSoftDeleteRepository<Account, UUID>, JpaSpecificationExecutor<Account> {

@@ -16,18 +16,13 @@ import java.util.UUID;
 public class CartItemResponse {
     private UUID id;
     private int quantity;
+    private CartItemStatus status;
 
     // Product info
-    private UUID productId;
-    private String productName;
-    private String productSlug;
+    private ProductResponse product;
 
     // Variant info
-    private UUID variantId;
-    private Long variantPrice;
-    private String variantImageUrl;
+    private VariantResponse variant;
 
     private List<AttributeValueResponse> attributes;
-
-    private CartItemStatus status;
 }

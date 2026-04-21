@@ -28,7 +28,9 @@ public enum CommonErrorCode implements BaseErrorCode {
   FAILED_EVENT_ALREADY_DEAD(
       HttpStatus.BAD_REQUEST, "Event is already in DEAD state and no further actions are allowed"),
   FAILED_EVENT_IS_RETRYING(HttpStatus.BAD_REQUEST, "Event is currently being retried"),
-  OUTBOX_EVENT_NOT_FOUND(HttpStatus.NOT_FOUND, "Outbox event not found"),
+    FAILED_EVENT_IS_EXHAUSTED(HttpStatus.BAD_REQUEST, "Event is currently being exhausted"),
+
+    OUTBOX_EVENT_NOT_FOUND(HttpStatus.NOT_FOUND, "Outbox event not found"),
   FAILED_EVENT_NOT_RETRYABLE(
       HttpStatus.BAD_REQUEST, "This failed event is not eligible for retry anymore"),
 

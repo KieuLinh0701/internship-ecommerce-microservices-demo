@@ -14,6 +14,9 @@ dependencies {
     implementation project(':common:common-core-jpa')
     implementation project(':common:common-core-kafka')
 
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
     // Cloudinary
     implementation 'com.cloudinary:cloudinary-http44:1.39.0'
 

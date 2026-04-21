@@ -49,15 +49,15 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      group-id: inventory-group
+      group-id: cart-group
       auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "*"
         spring.json.use.type.headers: true
-      listener:
-        ack-mode: RECORD
+    listener:
+      ack-mode: RECORD
 
 eureka:
   client:
@@ -78,7 +78,6 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.springframework.data.elasticsearch: DEBUG
-    co.elastic.clients: DEBUG
     io.opentelemetry.exporter: OFF
 
 openapi:
@@ -109,6 +108,16 @@ management:
   otlp:
     tracing:
       endpoint: http://localhost:4318/v1/traces
+
+kafka:
+  consumer:
+    dlt:
+      suffix: ".DLT"
+    retry:
+      initial-interval-ms: 2000
+      multiplier: 2.0
+      max-kafka-retry: 3
+      max-manual-retry: 3
 
 internal:
   secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

@@ -8,9 +8,7 @@ import com.teamsolution.common.core.enums.failedEvent.FailedEventStatus;
 import com.teamsolution.common.core.security.SecurityUtils;
 import com.teamsolution.common.jpa.mapper.PageMapper;
 import com.teamsolution.common.jpa.utils.PageableUtils;
-import com.teamsolution.inventory.service.customer.FailedEventService;
-import java.util.Map;
-import java.util.UUID;
+import com.teamsolution.inventory.service.internal.FailedEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +19,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/internal/failed-events")
