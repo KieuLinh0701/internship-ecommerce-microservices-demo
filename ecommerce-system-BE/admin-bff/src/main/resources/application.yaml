@@ -4,13 +4,8 @@ server:
 spring:
   application:
     name: admin-bff
-
-otel:
-  exporter:
-    otlp:
-      endpoint: http://otel-collector:4317
-      protocol: grpc
-  propagators: tracecontext,baggage
+  profiles:
+    active: local
 
 eureka:
   client:
@@ -33,15 +28,11 @@ consumer:
   timeout: 3
 
 logging:
-  file:
-    name: logs/admin-bff.log
   level:
     root: INFO
     org.springframework.web: INFO
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [traceId=%X{traceId}] %-5level %logger{36} - %msg%n"
 
 management:
   endpoints:
@@ -52,11 +43,19 @@ management:
     health:
       show-details: always
   metrics:
+    export:
+      enabled: true
     tags:
       application: ${spring.application.name}
   tracing:
     sampling:
       probability: 1.0
+  observations:
+    key-values:
+      application: ${spring.application.name}
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
 
 openapi:
   title: Admin Bff API

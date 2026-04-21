@@ -21,7 +21,6 @@ grpc:
 spring:
   application:
     name: cart-service
-
   profiles:
     active: local
 
@@ -70,8 +69,6 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
 
 logging:
-  file:
-    name: logs/cart-service.log
   level:
     root: INFO
     org.springframework.web: INFO

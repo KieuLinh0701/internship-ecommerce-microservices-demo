@@ -8,7 +8,6 @@ import com.teamsolution.common.kafka.event.order.OrderCreatedEvent;
 import com.teamsolution.common.kafka.event.order.OrderItemEvent;
 import com.teamsolution.common.kafka.event.order.OrderPaymentTimeoutEvent;
 import com.teamsolution.common.kafka.event.order.OrderRefundRequestedEvent;
-import com.teamsolution.common.tracing.context.TraceContext;
 import com.teamsolution.order.entity.Order;
 import com.teamsolution.order.entity.OrderItem;
 import com.teamsolution.order.entity.OutboxEvent;
@@ -16,11 +15,13 @@ import com.teamsolution.order.enums.EntityName;
 import com.teamsolution.order.enums.OrderEventType;
 import com.teamsolution.order.kafka.producer.OrderProducer;
 import com.teamsolution.order.repository.OutboxEventRepository;
+import com.teamsolution.tracing.context.TraceContext;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor

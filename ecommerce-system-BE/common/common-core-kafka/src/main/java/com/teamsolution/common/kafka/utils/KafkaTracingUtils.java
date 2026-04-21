@@ -1,6 +1,7 @@
 package com.teamsolution.common.kafka.utils;
 
-import com.teamsolution.common.tracing.utils.TraceUtils;
+import com.teamsolution.tracing.context.TraceMdc;
+import com.teamsolution.tracing.utils.TraceUtils;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Context;
@@ -10,7 +11,6 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.header.Header;
 import org.apache.kafka.common.header.Headers;
-import org.slf4j.MDC;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -18,8 +18,6 @@ import java.util.Iterator;
 
 public final class KafkaTracingUtils {
 
-    private static final String TRACE_ID            = "traceId";
-    private static final String SPAN_ID             = "spanId";
     private static final String TRACEPARENT_HEADER  = "traceparent";
     private static final String TRACEPARENT_VERSION = "00";
     private static final String TRACEPARENT_FLAGS   = "01";
@@ -71,15 +69,16 @@ public final class KafkaTracingUtils {
             Span currentSpan = Span.current();
 
             if (currentSpan.getSpanContext().isValid()) {
-                MDC.put(TRACE_ID, currentSpan.getSpanContext().getTraceId());
-                MDC.put(SPAN_ID,  currentSpan.getSpanContext().getSpanId());
+                TraceMdc.put(
+                        currentSpan.getSpanContext().getTraceId(),
+                        currentSpan.getSpanContext().getSpanId()
+                );
             }
 
             task.run();
 
         } finally {
-            MDC.remove(TRACE_ID);
-            MDC.remove(SPAN_ID);
+            TraceMdc.clear();
         }
     }
 }

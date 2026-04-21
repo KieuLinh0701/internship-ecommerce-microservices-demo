@@ -10,13 +10,14 @@ import com.teamsolution.common.core.enums.notification.NotificationChannel;
 import com.teamsolution.common.core.util.JsonUtils;
 import com.teamsolution.common.core.util.UuidUtils;
 import com.teamsolution.common.kafka.event.notification.AuthNotificationEvent;
-import com.teamsolution.common.tracing.context.TraceContext;
+import com.teamsolution.tracing.context.TraceContext;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
