@@ -37,21 +37,21 @@ spring:
           predicates:
             - Path=/api/cart/**
           filters:
-            - RewritePath=/api/cart/(?<segment>.*), /$\{segment}
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
 
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/api/orders/**
           filters:
-            - RewritePath=/api/orders/(?<segment>.*), /$\{segment}
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
 
         - id: payment-service
           uri: lb://payment-service
           predicates:
             - Path=/api/payments/**
           filters:
-            - RewritePath=/api/payments/(?<segment>.*), /$\{segment}
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
 
         - id: inventory-service
           uri: lb://inventory-service
@@ -148,4 +148,3 @@ management:
   otlp:
     tracing:
       endpoint: http://otel-collector:4318/v1/traces
-

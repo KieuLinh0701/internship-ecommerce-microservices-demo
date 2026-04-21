@@ -9,20 +9,24 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum ErrorCode implements BaseErrorCode {
 
-  // Cart
-  CART_NOT_FOUND(HttpStatus.NOT_FOUND, "Cart not found"),
+    // Cart
+    CART_NOT_FOUND(HttpStatus.NOT_FOUND, "Cart not found"),
 
-  // Cart item
-  CART_ITEM_NOT_BELONG_TO_CART(HttpStatus.FORBIDDEN, "Cart item not belong to your cart"),
-  CART_ITEM_NOT_FOUND(HttpStatus.NOT_FOUND, "Cart Item not found"),
+    // Cart item
+    CART_ITEM_NOT_BELONG_TO_CART(HttpStatus.FORBIDDEN, "Cart item not belong to your cart"),
+    CART_ITEM_NOT_FOUND(HttpStatus.NOT_FOUND, "Cart Item not found"),
+    CART_ITEM_CANNOT_CHECKOUT(HttpStatus.BAD_REQUEST, "Some items are invalid or already checked out"),
+    CART_ITEM_CANNOT_ACTIVE(HttpStatus.BAD_REQUEST, "Some items are invalid or already active"),
 
-  // Variant
-  PRODUCT_VARIANT_NOT_FOUND(HttpStatus.NOT_FOUND, "Variant not found"),
+    // Variant
+    PRODUCT_VARIANT_NOT_FOUND(HttpStatus.NOT_FOUND, "Variant not found"),
 
-  INSUFFICIENT_STOCK(HttpStatus.BAD_REQUEST, "Insufficient stock for the requested quantity"),
+    INSUFFICIENT_STOCK(HttpStatus.BAD_REQUEST, "Insufficient stock for the requested quantity"),
 
-  CUSTOMER_NOT_FOUND(HttpStatus.NOT_FOUND, "Customer not found"),
-  CUSTOMER_SERVICE_UNAVAILABLE(HttpStatus.SERVICE_UNAVAILABLE, "Customer service unavailable"),
+    CUSTOMER_NOT_FOUND(HttpStatus.NOT_FOUND, "Customer not found"),
+    CUSTOMER_SERVICE_UNAVAILABLE(HttpStatus.SERVICE_UNAVAILABLE, "Customer service unavailable"),
+
+    INVALID_PRODUCT_VARIANT_CHANGE(HttpStatus.BAD_REQUEST, "Variant does not belong to the same product"),
   ;
 
   private final HttpStatus httpStatus;

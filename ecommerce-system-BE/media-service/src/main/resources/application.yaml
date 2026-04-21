@@ -1,0 +1,78 @@
+server:
+  port: 9011
+
+grpc:
+  server:
+    port: 9101
+
+spring:
+  application:
+    name: media-service
+
+  profiles:
+    active: local
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadata-map:
+      grpcPort: 9101
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+logging:
+    file:
+      name: logs/media-service.log
+    level:
+      root: INFO
+      org.springframework.web: INFO
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+      org.springframework.data.elasticsearch: DEBUG
+      co.elastic.clients: DEBUG
+      io.opentelemetry.exporter: OFF
+
+openapi:
+  title: Media Service API
+  description: Media Service API Documentation
+  server-url: http://localhost:9000/api/media
+  server-description: Gateway - Local
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      enabled: true
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+
+cloudinary:
+  cloud-name: dcj9cnls7
+  api-key: 913188972473327
+  api-secret: 85BUYLBn3CppJiAZaewqcLzNPZE
+
+  folders:
+    product: products
+
+temp-image-cleanup:
+  fixed-rate-ms: 3600000
+  ttl-minutes: 60
+product-image:
+  max-files: 5
+
+internal:
+  secret: 32f9e68f9ac7ebc99d8d712ad162d78f5b7053665e143ba92a747af340b38613

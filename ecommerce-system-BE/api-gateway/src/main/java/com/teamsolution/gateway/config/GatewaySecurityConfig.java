@@ -2,7 +2,6 @@ package com.teamsolution.gateway.config;
 
 import com.teamsolution.gateway.config.properties.AuthServiceProperties;
 import com.teamsolution.gateway.security.GoogleOAuth2SuccessHandler;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +15,8 @@ import org.springframework.security.oauth2.jwt.ReactiveJwtDecoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import java.util.List;
 
 @Configuration
 @EnableWebFluxSecurity
@@ -57,7 +58,9 @@ public class GatewaySecurityConfig {
                     .permitAll()
 
                     // Payment Public
-                    .pathMatchers(HttpMethod.GET, "/api/payments/ipn")
+                    .pathMatchers(HttpMethod.GET,
+                            "/api/payments/vnpay/ipn",
+                            "/api/payments/vnpay/result")
                     .permitAll()
 
                     // OAuth2

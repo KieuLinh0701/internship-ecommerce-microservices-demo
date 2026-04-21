@@ -8,59 +8,57 @@ import com.teamsolution.proto.grpc.customer.CreateCustomerRequest;
 import com.teamsolution.proto.grpc.customer.CustomerServiceGrpc;
 import com.teamsolution.proto.grpc.customer.GetCustomerIdByAccountIdRequest;
 import com.teamsolution.proto.grpc.customer.GetCustomerIdByAccountIdResponse;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Component;
-
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 @Component
 @RequiredArgsConstructor
 public class CustomerGrpcClient {
 
-    private final GrpcProperties grpcProperties;
+  private final GrpcProperties grpcProperties;
 
-    private final GrpcExecutor grpcExecutor;
+  private final GrpcExecutor grpcExecutor;
 
-    @GrpcClient(GrpcServiceName.CUSTOMER_SERVICE)
-    private CustomerServiceGrpc.CustomerServiceBlockingStub stub;
+  @GrpcClient(GrpcServiceName.CUSTOMER_SERVICE)
+  private CustomerServiceGrpc.CustomerServiceBlockingStub stub;
 
-    private CustomerServiceGrpc.CustomerServiceBlockingStub stub() {
-        return stub.withDeadlineAfter(grpcProperties.getTimeout()
-                .toMillis(), TimeUnit.MILLISECONDS);
-    }
+  private CustomerServiceGrpc.CustomerServiceBlockingStub stub() {
+    return stub.withDeadlineAfter(grpcProperties.getTimeout().toMillis(), TimeUnit.MILLISECONDS);
+  }
 
-    public void createNewCustomer(UUID accountId, String fullName, String phone, String avatarUrl) {
+  public void createNewCustomer(UUID accountId, String fullName, String phone, String avatarUrl) {
 
-        grpcExecutor.execute(
-                () -> {
-                    CreateCustomerRequest request =
-                            CreateCustomerRequest.newBuilder()
-                                    .setAccountId(accountId.toString())
-                                    .setFullName(fullName)
-                                    .setPhone(phone)
-                                    .setAvatarUrl(avatarUrl)
-                                    .build();
+    grpcExecutor.execute(
+        () -> {
+          CreateCustomerRequest request =
+              CreateCustomerRequest.newBuilder()
+                  .setAccountId(accountId.toString())
+                  .setFullName(fullName)
+                  .setPhone(phone)
+                  .setAvatarUrl(avatarUrl)
+                  .build();
 
-                    stub().createCustomer(request);
+          stub().createCustomer(request);
 
-                    return null;
-                });
-    }
+          return null;
+        });
+  }
 
-    public UUID getCustomerIdByAccountId(UUID accountId) {
+  public UUID getCustomerIdByAccountId(UUID accountId) {
 
-        return grpcExecutor.execute(
-                () -> {
-                    GetCustomerIdByAccountIdRequest request =
-                            GetCustomerIdByAccountIdRequest.newBuilder()
-                                    .setAccountId(accountId.toString())
-                                    .build();
+    return grpcExecutor.execute(
+        () -> {
+          GetCustomerIdByAccountIdRequest request =
+              GetCustomerIdByAccountIdRequest.newBuilder()
+                  .setAccountId(accountId.toString())
+                  .build();
 
-                    GetCustomerIdByAccountIdResponse response = stub().getCustomerIdByAccountId(request);
+          GetCustomerIdByAccountIdResponse response = stub().getCustomerIdByAccountId(request);
 
-                    return UuidUtils.parse(response.getCustomerId());
-                });
-    }
+          return UuidUtils.parse(response.getCustomerId());
+        });
+  }
 }

@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.teamsolution.media'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(":common:common-core-grpc-server")
+
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    // Cloudinary
+    implementation 'com.cloudinary:cloudinary-http44:1.39.0'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -119,8 +119,6 @@ cloudinary:
 temp-image-cleanup:
   fixed-rate-ms: 3600000
   ttl-minutes: 60
-product-image:
-  max-files: 5
 
 outbox:
   scheduler:

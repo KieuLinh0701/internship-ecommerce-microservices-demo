@@ -11,82 +11,75 @@ import com.teamsolution.common.core.util.JsonUtils;
 import com.teamsolution.common.core.util.UuidUtils;
 import com.teamsolution.common.kafka.event.notification.AuthNotificationEvent;
 import com.teamsolution.common.tracing.context.TraceContext;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class NotificationProducerImpl
-        implements NotificationProducer {
+public class NotificationProducerImpl implements NotificationProducer {
 
-    private final OutboxEventRepository outboxEventRepository;
-    private final TraceContext traceContext;
+  private final OutboxEventRepository outboxEventRepository;
+  private final TraceContext traceContext;
 
-    @Override
-    public void send(
-            Account account,
-            String type,
-            List<NotificationChannel> channels,
-            Map<String, String> variablesMap,
-            AuthEventType eventType,
-            EntityName aggregateType) {
+  @Override
+  public void send(
+      Account account,
+      String type,
+      List<NotificationChannel> channels,
+      Map<String, String> variablesMap,
+      AuthEventType eventType,
+      EntityName aggregateType) {
 
-        AuthNotificationEvent event =
-                AuthNotificationEvent.builder()
-                        .accountId(account.getId())
-                        .email(account.getEmail())
-                        .type(type)
-                        .channels(channels)
-                        .variables(variablesMap)
-                        .build();
+    AuthNotificationEvent event =
+        AuthNotificationEvent.builder()
+            .accountId(account.getId())
+            .email(account.getEmail())
+            .type(type)
+            .channels(channels)
+            .variables(variablesMap)
+            .build();
 
-        System.out.println("trace 1: " + traceContext.currentTraceId());
+    this.saveToOutbox(account.getId(), aggregateType, eventType, event);
+  }
 
-        OutboxEvent outboxEvent =
-                OutboxEvent.builder()
-                        .traceId(traceContext.currentTraceId())
-                        .aggregateId(account.getId())
-                        .aggregateType(aggregateType.getValue())
-                        .eventType(eventType.name())
-                        .nextRetryAt(LocalDateTime.now())
-                        .payload(JsonUtils.toJson(event))
-                        .build();
+  @Override
+  public void send(
+      String email,
+      String type,
+      List<NotificationChannel> channels,
+      Map<String, String> variablesMap,
+      AuthEventType eventType,
+      EntityName aggregateType) {
 
-        outboxEventRepository.save(outboxEvent);
-    }
+    AuthNotificationEvent event =
+        AuthNotificationEvent.builder()
+            .accountId(null)
+            .email(email)
+            .type(type)
+            .channels(channels)
+            .variables(variablesMap)
+            .build();
 
-    @Override
-    public void send(
-            String email,
-            String type,
-            List<NotificationChannel> channels,
-            Map<String, String> variablesMap,
-            AuthEventType eventType,
-            EntityName aggregateType) {
+    this.saveToOutbox(UuidUtils.generate(), aggregateType, eventType, event);
+  }
 
-        AuthNotificationEvent event =
-                AuthNotificationEvent.builder()
-                        .accountId(null)
-                        .email(email)
-                        .type(type)
-                        .channels(channels)
-                        .variables(variablesMap)
-                        .build();
+  private void saveToOutbox(
+      UUID aggregateId, EntityName aggregateType, AuthEventType eventType, Object payloadEvent) {
 
-        OutboxEvent outboxEvent =
-                OutboxEvent.builder()
-                        .traceId(traceContext.currentTraceId())
-                        .aggregateId(UuidUtils.generate())
-                        .aggregateType(aggregateType.getValue())
-                        .eventType(eventType.name())
-                        .nextRetryAt(LocalDateTime.now())
-                        .payload(JsonUtils.toJson(event))
-                        .build();
+    OutboxEvent outboxEvent =
+        OutboxEvent.builder()
+            .traceId(traceContext.currentTraceId())
+            .aggregateId(aggregateId)
+            .aggregateType(aggregateType.getValue())
+            .eventType(eventType.name())
+            .nextRetryAt(LocalDateTime.now())
+            .payload(JsonUtils.toJson(payloadEvent))
+            .build();
 
-        outboxEventRepository.save(outboxEvent);
-    }
+    outboxEventRepository.save(outboxEvent);
+  }
 }

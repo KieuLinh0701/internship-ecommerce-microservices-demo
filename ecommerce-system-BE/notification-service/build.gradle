@@ -14,11 +14,8 @@ dependencies {
     implementation project(':common:common-core-kafka')
     implementation project(':common:common-core-jpa')
 
-    // Grpc Client
-    implementation 'net.devh:grpc-client-spring-boot-starter:3.1.0.RELEASE'
-
-    // Kafka
-    implementation 'org.springframework.kafka:spring-kafka'
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
     // WebSocket
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
@@ -38,10 +35,6 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {

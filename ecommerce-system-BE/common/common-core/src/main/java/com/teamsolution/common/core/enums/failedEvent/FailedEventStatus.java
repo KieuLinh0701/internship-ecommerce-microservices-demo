@@ -4,10 +4,11 @@ import com.teamsolution.common.core.exception.AppException;
 import com.teamsolution.common.core.exception.enums.CommonErrorCode;
 
 public enum FailedEventStatus {
-  FAILED,
-  RETRYING,
-  SUCCESS,
-  DEAD;
+    FAILED,
+    RETRYING,
+    SUCCESS,
+    EXHAUSTED,
+    DEAD;
 
   public void validateCanRetry() {
     switch (this) {
@@ -20,6 +21,9 @@ public enum FailedEventStatus {
       case DEAD -> {
         throw new AppException(CommonErrorCode.FAILED_EVENT_ALREADY_DEAD);
       }
+        case EXHAUSTED -> {
+            throw new AppException(CommonErrorCode.FAILED_EVENT_IS_EXHAUSTED);
+        }
       case FAILED -> {}
       default -> throw new AppException(CommonErrorCode.UNEXPECTED_ENUM_VALUE);
     }
@@ -36,6 +40,9 @@ public enum FailedEventStatus {
       case DEAD -> {
         throw new AppException(CommonErrorCode.FAILED_EVENT_ALREADY_DEAD);
       }
+        case EXHAUSTED -> {
+            throw new AppException(CommonErrorCode.FAILED_EVENT_IS_EXHAUSTED);
+        }
       case FAILED -> {}
       default -> throw new AppException(CommonErrorCode.UNEXPECTED_ENUM_VALUE);
     }

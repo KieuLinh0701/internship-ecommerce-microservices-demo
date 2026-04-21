@@ -24,7 +24,9 @@ public class AccountSpecification {
 
   public static Specification<Account> hasRole(String roleName) {
     return (root, query, cb) -> {
-      if (roleName == null) return null;
+      if (roleName == null) {
+        return null;
+      }
       Join<Account, AccountRole> accountRoles = root.join("accountRoles", JoinType.LEFT);
       Join<AccountRole, Role> role = accountRoles.join("role", JoinType.LEFT);
       return cb.equal(cb.lower(role.get("name")), roleName.toLowerCase());

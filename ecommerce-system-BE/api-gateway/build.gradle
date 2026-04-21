@@ -20,14 +20,14 @@ repositories {
 dependencies {
     implementation project(':common:common-tracing')
 
-    // Lombok: Reduces boilerplate code (getter, setter, constructor, builder, etc.)
+    // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
     // Spring Cloud Gateway: builds the reactive API Gateway
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
 
-    // Eureka Client: registers this server with Eureka Server
+    // Eureka Client
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
     // OAuth2 Resource Server: validates JWT tokens at the gateway

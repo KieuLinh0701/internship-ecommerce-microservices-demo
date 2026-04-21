@@ -13,15 +13,12 @@ dependencies {
     implementation(project(':common:common-core')) {
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-data-jpa'
     }
+    implementation project(':common:common-tracing')
 
     implementation 'org.springframework.data:spring-data-commons'
 
     // Eureka Client
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-
-    // Actuator + Prometheus
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'io.micrometer:micrometer-registry-prometheus'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

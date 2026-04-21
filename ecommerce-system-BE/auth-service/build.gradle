@@ -21,6 +21,9 @@ dependencies {
     }
     implementation 'org.glassfish.jersey.core:jersey-common:3.1.3'
 
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
     // Flyway
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-database-postgresql'

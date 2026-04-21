@@ -1,0 +1,14 @@
+package com.teamsolution.order.enums;
+
+public enum OrderCancelReason {
+  CHANGED_MIND,
+  WRONG_ADDRESS,
+  FOUND_BETTER_PRICE,
+  WAIT_TOO_LONG,
+  DUPLICATE_ORDER,
+  OUT_OF_STOCK,
+  PAYMENT_TIMEOUT,
+  PAYMENT_FAILED,
+  ADMIN_CANCELLED,
+  OTHER
+}

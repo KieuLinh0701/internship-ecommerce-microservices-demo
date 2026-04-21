@@ -1,10 +1,10 @@
 package com.teamsolution.cart.controller;
 
-import com.teamsolution.cart.dto.request.AddCartItemRequest;
+import com.teamsolution.cart.dto.request.CreateCartItemRequest;
 import com.teamsolution.cart.dto.request.UpdateCartItemQuantityRequest;
 import com.teamsolution.cart.dto.request.UpdateCartItemVariantRequest;
 import com.teamsolution.cart.dto.response.cartitem.CartItemResponse;
-import com.teamsolution.cart.service.CartItemService;
+import com.teamsolution.cart.service.customer.CartItemService;
 import com.teamsolution.common.core.dto.common.response.ApiResponse;
 import com.teamsolution.common.core.security.SecurityUtils;
 import jakarta.validation.Valid;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("/cart/items")
 @RequiredArgsConstructor
 public class CartItemController {
 
@@ -29,7 +29,7 @@ public class CartItemController {
 
     @PostMapping
     public ResponseEntity<ApiResponse<CartItemResponse>> addCartItem(
-            @Valid @RequestBody AddCartItemRequest request
+            @Valid @RequestBody CreateCartItemRequest request
     ) {
         UUID currentCustomerId = SecurityUtils.getCurrentCustomerId();
 
@@ -44,7 +44,7 @@ public class CartItemController {
         UUID currentCustomerId = SecurityUtils.getCurrentCustomerId();
 
         cartItemService.deleteCartItem(currentCustomerId, id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(ApiResponse.success(null));
     }
 
     @PatchMapping("/{id}/quantity")
@@ -62,7 +62,7 @@ public class CartItemController {
     public ResponseEntity<ApiResponse<CartItemResponse>> updateVariant(
             @PathVariable UUID id,
             @RequestBody UpdateCartItemVariantRequest request) {
-        UUID currentCustomerId = SecurityUtils.getCurrentAccountId();
+        UUID currentCustomerId = SecurityUtils.getCurrentCustomerId();
         return ResponseEntity.ok(ApiResponse.success(
                 cartItemService.updateCartItemVariant(currentCustomerId, id, request)));
     }

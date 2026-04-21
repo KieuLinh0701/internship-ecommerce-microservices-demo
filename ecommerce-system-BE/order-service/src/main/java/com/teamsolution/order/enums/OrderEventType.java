@@ -1,0 +1,10 @@
+package com.teamsolution.order.enums;
+
+public enum OrderEventType {
+  ORDER_CREATED,
+  ORDER_CONFIRMED,
+  ORDER_CANCELLED,
+  ORDER_CANCEL_REQUESTED,
+  ORDER_REFUND_REQUESTED,
+  ORDER_PAYMENT_TIMEOUT
+}

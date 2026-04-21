@@ -13,8 +13,8 @@ dependencies {
     implementation project(':common:common-core-grpc-server')
     implementation project(':common:common-core-jpa')
 
-    // Grpc Server
-    implementation 'net.devh:grpc-server-spring-boot-starter:3.1.0.RELEASE'
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
     // Flyway
     implementation 'org.flywaydb:flyway-core'

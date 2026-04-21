@@ -9,7 +9,6 @@ import com.teamsolution.inventory.dto.response.product.detail.BrandResponse;
 import com.teamsolution.inventory.dto.response.product.detail.CategoryResponse;
 import com.teamsolution.inventory.dto.response.product.detail.ProductDetailResponse;
 import com.teamsolution.inventory.dto.response.product.detail.ProductImageResponse;
-import com.teamsolution.inventory.dto.response.product.detail.ProductVariantResponse;
 import com.teamsolution.inventory.entity.AttributeValue;
 import com.teamsolution.inventory.entity.Brand;
 import com.teamsolution.inventory.entity.Category;
@@ -67,19 +66,19 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<ProductVariantResponse> getVariantsByProductId(UUID productId) {
-        findDetailProduct(productId, List.of(ProductStatus.ACTIVE));
+    public List<AttributeWithValuesResponse> getAttributesByProductId(UUID productId) {
 
-        List<ProductVariant> variants = productVariantInternalService.getByProductId(productId);
+        List<ProductVariant> variants =
+                productVariantInternalService.getByProductId(productId);
 
         List<ProductVariant> validVariants = getValidProductVariant(variants);
 
-        return productVariantMapper.toDtoList(validVariants);
+        return buildAttributes(validVariants);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public ProductVariantResponse getVariantByAttributeValues(UUID productId, MatchVariantRequest request) {
+    public UUID getVariantByAttributeValues(UUID productId, MatchVariantRequest request) {
         findDetailProduct(productId, List.of(ProductStatus.ACTIVE));
 
         List<ProductVariant> variants = productVariantInternalService.getByProductId(productId);
@@ -99,7 +98,7 @@ public class ProductServiceImpl implements ProductService {
                 .findFirst()
                 .orElseThrow(() -> new AppException(ErrorCode.PRODUCT_VARIANT_NOT_FOUND));
 
-        return productVariantMapper.toDto(matched);
+        return matched.getId();
     }
 
     private Product findDetailProduct(UUID productId, List<ProductStatus> listStatus) {
