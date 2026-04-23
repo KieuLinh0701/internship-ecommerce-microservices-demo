@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     implementation project(':common:common-tracing-webflux')
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'

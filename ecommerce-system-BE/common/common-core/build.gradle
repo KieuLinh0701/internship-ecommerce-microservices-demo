@@ -1,6 +1,8 @@
 dependencies {
     api project(':common:common-tracing-mvc')
 
+    api 'org.springframework.cloud:spring-cloud-starter-config'
+
     api 'org.springframework.boot:spring-boot-starter-security'
 
     api 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
